@@ -1,1 +1,38 @@
-<h1> Login Page </h1>
+<div ng-controller="loginCtrl" class="contentdemoBasicUsage">
+  
+  <form name="userLoginForm">
+    <div layout="column" layout-sm="column" layout-align="start center">
+      
+      <div layout-margin>
+		 <h2 class="md-title">Sign In</h2>
+      </div>
+      
+      <div>
+        <md-input-container>
+          <label>Email</label>
+            <input ng-model="user.username" type="email" name="username">
+        </md-input-container>
+      </div>
+      
+      <div>
+        <md-input-container>
+          <label>Password</label>
+          <input ng-model="user.password" type="password" name="password">
+        </md-input-container>
+      </div>
+    
+      <div layout-margin>
+          <md-button id="login_button" class="md-raised" ng-click="login()">Login</md-button>
+      </div>
+      <div>
+          <span md-warn ng-if="loginFailureMessage">The email or password you entered dont match.</span>
+    </div>
+    </div>
+  </form>
+  <div layout="row" layout-sm="column" layout-align="space-around">
+    <md-progress-circular md-mode="determinate" ng-show="">
+    </md-progress-circular>
+  </div>
+  <div layout="column" layout-sm="column" layout-align="start center" layout-margin>
+  </div>
+</div>

@@ -14,7 +14,9 @@
   <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/material-icon.css">
+  <link rel="import" href="views/menu/menu.html">
   <script src="app.js"></script>
+  <script src="views/home/homeController.js"></script> 
   <script src="views/menu/menuController.js"></script> 
   <script src="views/carpool/carpoolController.js"></script> 
   <script src="views/checkin/checkinController.js"></script> 
@@ -27,11 +29,19 @@
   <script src="views/logout/logoutController.js"></script> 
   <script src="views/points/pointsController.js"></script> 
   <script src="views/profile/profileController.js"></script> 
-  <script src="views/profile/submitSelfiEventController.js"></script> 
-  <script src="views/profile/ucbMembersController.js"></script> 
+  <script src="views/submitSelfiEvent/submitSelfiEventController.js"></script> 
+  <script src="views/ucbMembers/ucbMembersController.js"></script> 
+  <script src="views/myPhotos/myPhotosController.js"></script> 
+  <script src="views/friendRequest/friendRequestController.js"></script> 
+  <script src="views/message/messageController.js"></script>
+  <script src="views/theme/themeController.js"></script> 
+  <script src="directive/avatar.js"></script>
 </head>
-<body md-theme="{{userDetails.theme}}" md-theme-watch  ng-controller="menuCtrl">
-  <div  layout="column" class="contentdemoBasicUsage">
+<body md-theme="{{theme}}" md-theme-watch  ng-controller="menuCtrl">
+   <div ng-show = 'isloginLocation()'>
+      <img src="img/UCBlogo.jpg" alt="UCB logo" class="ucb-logo">
+    </div>
+  <div  layout="column" class="contentdemoBasicUsage" ng-if='!isloginLocation()'>
     <md-toolbar class="md-primary">
     <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
       <div>
@@ -41,18 +51,18 @@
     </div>
     <div>
       <span class="flex">
-        <md-button class="md-primary" ng-model="home_button" ui-sref="">UCB Home</md-button>
+        <md-button class="md-primary" ng-model="home_button" ui-sref=".home">UCB Home</md-button>
       </span>
     </div>
     <div>
       <span class="flex">
-        <md-button class="md-primary" ng-model="login_button" ui-sref="login">Profile</md-button>
+        <md-button class="md-primary" ng-model="login_button" ui-sref=".profile">Profile</md-button>
       </span>
     </div>
   </div>
 </div>
 </md-toolbar>
 </div>
-<div ui-view></div>
+<div ng-include="'views/menu/menu.html'"></div>
 </body>
 </html>

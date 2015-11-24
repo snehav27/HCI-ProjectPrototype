@@ -1,6 +1,13 @@
-app.controller('menuCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+app.controller('menuCtrl', function ($scope, $location, $timeout, $mdSidenav, $log) {
     $scope.toggleLeft = buildDelayedToggler('left');
+    
 
+     $scope.isloginLocation = function() {
+     var currentPath = $location.path();
+     console.log($scope.currentPath);
+     var isLoginPath = (currentPath == '/login' ? true : false);
+     return isLoginPath;
+   };
 
     /**
      * Supplies a function that will continue to operate until the

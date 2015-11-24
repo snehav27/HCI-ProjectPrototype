@@ -42,13 +42,20 @@
           .primaryPalette('indigo');
           
       $urlRouterProvider
-          .when('/', '/menu')
-          .otherwise('/menu');
+          .when('/', '/home')
+          .otherwise('/home');
 
       $stateProvider
+      // .state('login', {
+      //       url: '/login',
+      //       templateUrl: 'views/login/login.html',
+      //       controller: 'loginCtrl',
+      // onEnter: function () { console.log("enter login.html"); }
+      // })
 		  .state('menu', {
             url: '/menu',
             templateUrl: 'views/menu/menu.html',
+            redirectTo: 'menu.home',
 			      controller: 'menuCtrl',
 			onEnter: function () { console.log("enter menuCtrl.html"); }
 		  })
@@ -58,11 +65,95 @@
       controller: 'homeCtrl',
       onEnter: function () { console.log("enter home.html"); }
       })
+      .state('points', {
+            url: '/points',
+            templateUrl: 'views/points/points.html',
+      controller: 'pointsCtrl',
+      onEnter: function () { console.log("enter points.html"); }
+      })
+      .state('checkin', {
+            url: '/checkin',
+            templateUrl: 'views/checkin/checkin.html',
+      controller: 'checkinCtrl',
+      onEnter: function () { console.log("enter checkin.html"); }
+      })
+      .state('events', {
+            url: '/events',
+            templateUrl: 'views/events/events.html',
+      controller: 'eventsCtrl',
+      onEnter: function () { console.log("enter events.html"); }
+      })
+      .state('ucbMembers', {
+            url: '/ucbMembers',
+            templateUrl: 'views/ucbMembers/ucbMembers.html',
+      controller: 'ucbMembersCtrl',
+      onEnter: function () { console.log("enter ucbMembers.html"); }
+      })
+      .state('carpool', {
+            url: '/carpool',
+            templateUrl: 'views/carpool/carpool.html',
+      controller: 'carpoolCtrl',
+      onEnter: function () { console.log("enter carpool.html"); }
+      })
+      .state('contactUs', {
+            url: '/contactUs',
+            templateUrl: 'views/contactUs/contactUs.html',
+      controller: 'contactUsCtrl',
+      onEnter: function () { console.log("enter contactUs.html"); }
+      })
+      .state('profile', {
+            url: '/profile',
+            templateUrl: 'views/profile/profile.html',
+      controller: 'profileCtrl',
+      onEnter: function () { console.log("enter profile.html"); }
+      })
+      .state('editProfile', {
+            url: '/editProfile',
+            templateUrl: 'views/editProfile/editProfile.html',
+      controller: 'editProfileCtrl',
+      onEnter: function () { console.log("enter editProfile.html"); }
+      })
+      .state('message', {
+            url: '/message',
+            templateUrl: 'views/message/message.html',
+      controller: 'messageCtrl',
+      onEnter: function () { console.log("enter message.html"); }
+      })
+      .state('friends', {
+            url: '/friends',
+            templateUrl: 'views/friends/friends.html',
+      controller: 'friendsCtrl',
+      onEnter: function () { console.log("enter friends.html"); }
+      })
+      .state('friendRequest', {
+            url: '/friendRequest',
+            templateUrl: 'views/friendRequest/friendRequest.html',
+      controller: 'friendRequestCtrl',
+      onEnter: function () { console.log("enter friendRequest.html"); }
+      })
+      .state('myPhotos', {
+            url: '/myPhotos',
+            templateUrl: 'views/myPhotos/myPhotos.html',
+      controller: 'myPhotosCtrl',
+      onEnter: function () { console.log("enter myPhotos.html"); }
+      })
+      .state('history', {
+            url: '/history',
+            templateUrl: 'views/history/history.html',
+      controller: 'historyCtrl',
+      onEnter: function () { console.log("enter myPhotos.html"); }
+      })
       .state('login', {
             url: '/login',
             templateUrl: 'views/login/login.html',
       controller: 'loginCtrl',
       onEnter: function () { console.log("enter login.html"); }
+      })
+      .state('theme', {
+            url: '/theme',
+            templateUrl: 'views/theme/theme.html',
+      controller: 'themeCtrl',
+      onEnter: function () { console.log("enter theme.html"); }
       });//
     }
   ]

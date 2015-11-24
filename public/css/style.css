@@ -5,3 +5,10 @@ div {
    margin: 0px;
    padding: 0px;
 }
+.user-avatar {
+  border-radius: 99%;
+}
+.ucb-logo {
+	width: 90%;
+	height: 20%;
+}

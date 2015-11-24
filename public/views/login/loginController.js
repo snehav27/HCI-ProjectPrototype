@@ -5,5 +5,9 @@
     Email  : hci.cs5340@gmail.com
 */
 app.controller('loginCtrl', function ($scope, $rootScope, $location) {
+	
+	$scope.login = function() {
+		$location.url('/home');
+	}
 
 });

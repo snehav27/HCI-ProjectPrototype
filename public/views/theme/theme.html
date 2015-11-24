@@ -1,0 +1,27 @@
+<div ng-controller="themeCtrl" layout ="column" layout-align="center center" layout-margin>
+	<div layout layout-align="center center" layout-margin>
+      	<h2 class="md-title">
+        	Select a theme :
+        </h2>
+    </div>
+    <div layout-margin>
+    	<md-button id="pink" style=" background-color: dark-pink;" class="md-fab md-mini" aria-label="pink" ng-click="changeTheme($event)">
+        </md-button>
+        <md-button id="purple" style=" background-color: purple;" class="md-fab md-mini" aria-label="purple" ng-click="changeTheme($event)">
+        </md-button>
+        <md-button id="brown" style=" background-color: brown;" class="md-fab md-mini" aria-label="brown" ng-click="changeTheme($event)">
+        </md-button> <br>
+        <md-button id="indigo"  style=" background-color: indigo;" class="md-fab md-mini" aria-label="indigo" ng-click="changeTheme($event)">
+        </md-button>
+        <md-button id="green"  style=" background-color: green;" class="md-fab md-mini" aria-label="green" ng-click="changeTheme($event)">
+        </md-button>
+         <md-button id="grey"  style=" background-color: grey;" class="md-fab md-mini" aria-label="grey" ng-click="changeTheme($event)">
+        </md-button>
+    </div>
+    <div class="thing" ng-show="!theme" layout-margin>
+      <h3> Current theme is Indigo. <h3>
+    </div>
+    <div class="thing" ng-show="theme" layout-margin>
+      <h3>Current theme is {{theme}}.<h3>
+    </div>
+</div>

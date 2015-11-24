@@ -6,4 +6,8 @@
 */
 app.controller('profileCtrl', function ($scope, $rootScope, $location) {
 
+	$scope.goToPage = function(page) {
+		$location.url(page);
+	}
+
 });

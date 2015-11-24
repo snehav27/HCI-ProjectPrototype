@@ -1,28 +1,57 @@
-  <div layout="column" ng-cloak="" class="sidenavdemoBasicUsage">
-    <section layout="row" flex="">
-      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+    <div layout="row">
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" flex="33">
       <div ng-controller="LeftCtrl">
         <md-toolbar class="md-theme-indigo">
         <div layout ="row" layout="center center">
           <h1 class="md-toolbar-tools">Menu</h1><i ng-click="close()" class="material-icons">close</i>
         </div>
       </md-toolbar>
-      <md-content layout-padding="">
-      <p hide-md="" show-gt-md="" layout="column">
-       <md-button> Points</md-button>
-       <md-button> Check In</md-button>
-       <md-button> Events</md-button>
-       <md-button> UCB Members</md-button>
-       <md-button> Carpool</md-button>
-       <md-button> Contact Us</md-button>
-       <md-button> Logout</md-button>
-     </p>
-   </md-content>
+   <md-list>
+      <md-item layout="column" ng-click="close()">
+        <a class="md-button" ui-sref=".points">
+          <md-item-content md-ink-ripple>
+            Points
+          </md-item-content>
+        </a>
+        <a class="md-button" ui-sref=".checkin">
+          <md-item-content md-ink-ripple>
+            Check In
+          </md-item-content>
+        </a>
+        <a class="md-button" ui-sref=".ucbMembers">
+          <md-item-content md-ink-ripple>
+             UCB Members
+          </md-item-content>
+        </a>
+        <a class="md-button" ui-sref=".carpool">
+          <md-item-content md-ink-ripple >
+             Carpool
+          </md-item-content>
+        </a>
+        <a class="md-button" ui-sref=".contactUs">
+          <md-item-content md-ink-ripple >
+               Contact Us
+          </md-item-content>
+        </a>
+      <md-divider></md-divider>
+        <a class="md-button" ui-sref=".login">
+          <md-item-content md-ink-ripple >
+              Logout
+          </md-item-content>
+        </a>
+      </md-item>
+    </md-list>
  </div>
   </md-sidenav>
-  <md-content flex="" layout-padding="">
-    <div layout="column" layout-fill="" layout-align="top center" ui-view>
+   <div layout="column" class="relative" layout-fill role="main">
+      <md-content flex md-scroll-y layout="column" layout-fill layout-padding>
+          <div class="inset" hide-sm></div>
+              <div layout="row" layout-align="center center">
+                  <div flex-gt-sm="100" flex-gt-md="80" ui-view>
+                  </div>
+              </div>
+      </md-content> 
     </div>
-  </md-content>
-</section>
 </div>
+
