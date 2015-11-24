@@ -1,2 +1,3 @@
-# HCI-ProjectPrototype
-HCI CS5340  Final Project prototype Github 
+The OpenShift `nodejs` cartridge documentation can be found at:
+
+http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs

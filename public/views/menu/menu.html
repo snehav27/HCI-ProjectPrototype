@@ -1,0 +1,28 @@
+  <div layout="column" ng-cloak="" class="sidenavdemoBasicUsage">
+    <section layout="row" flex="">
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <div ng-controller="LeftCtrl">
+        <md-toolbar class="md-theme-indigo">
+        <div layout ="row" layout="center center">
+          <h1 class="md-toolbar-tools">Menu</h1><i ng-click="close()" class="material-icons">close</i>
+        </div>
+      </md-toolbar>
+      <md-content layout-padding="">
+      <p hide-md="" show-gt-md="" layout="column">
+       <md-button> Points</md-button>
+       <md-button> Check In</md-button>
+       <md-button> Events</md-button>
+       <md-button> UCB Members</md-button>
+       <md-button> Carpool</md-button>
+       <md-button> Contact Us</md-button>
+       <md-button> Logout</md-button>
+     </p>
+   </md-content>
+ </div>
+  </md-sidenav>
+  <md-content flex="" layout-padding="">
+    <div layout="column" layout-fill="" layout-align="top center" ui-view>
+    </div>
+  </md-content>
+</section>
+</div>
