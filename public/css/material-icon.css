@@ -13,6 +13,10 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 
+.material-icons {
+	outline:none;
+}
+
 .material-icons.md-36.brown { 
 	font-size: 36px;
 	color: brown;
@@ -39,11 +43,15 @@
 	color: green;
  }
 
-  .material-icons.md-36.grey { 
+.material-icons.md-36.grey { 
 	font-size: 36px;
 	color: grey;
  }
- .material-icons.md-72.red { 
-	font-size: 72px;
+  .material-icons.md-36.red { 
+	font-size: 36px;
+	color: red;
+ }
+ .material-icons.md-48.red { 
+	font-size: 48px;
 	color: #d2281b;
  }

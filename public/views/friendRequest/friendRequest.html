@@ -2,14 +2,11 @@
   <div layout="column" layout-align="center center" ng-controller="ucbMembersCtrl">
 
     <div>
-    	 <h3>Friend Requests</h3>
-    </div>	
-    <div layout="column" class="relative" layout-fill role="main">
-        <div layout="row" layout-sm="row"  layout-align="center center">
-    <div>
-	 <i class="material-icons" flex>search</i>
+    	 <h3>Pending Friend Requests</h3>
     </div>
-	</div>
+
+    <div layout="column" class="relative" layout-fill role="main">
+      
       <md-content flex md-scroll-y>
         <ui-view layout="column" layout-fill>
           <div class="inset" hide-sm></div>
@@ -19,20 +16,24 @@
                       <md-list>
                         <md-item ng-repeat="item in friendRequestData | filter:search">
                           <md-item-content>
-                          <div layout="row" layout-align="space-between center">
+                          <div layout="row" layout-align="space-between center" >
                           	<div layout="row">
                             <div class="md-tile-left inset">
-                                <user-avatar></user-avatar>
+                                <user-avatar id="member-icon"></user-avatar>
                             </div>
                             <div layout="column"class="md-tile-content">
                               <h4>{{item.who}}</h4>
-                          
+                    
                             </div>
                             </div>
-                            <div layout="row">
-                              <md-button class="md-raised md-primary" ng-click="acceptRequest($index);showSimpleToast();"><span class="md-caption">Accept</span></md-button>
-
-                              <md-button class="md-raised md-warn" ng-click="declineRequest($index)"><span class="md-caption">Delete Request</span></md-button>
+                            <div layout="row" layout-align="space-between center" layout-margin>
+                              <!-- <md-button class="md-raised md-primary" ><span class="md-caption">Accept</span></md-button> -->
+                              <div>
+                              <i class="material-icons md-36 green" ng-click="acceptRequest($index);showSimpleToast();">done</i>
+                          	  </div>
+                          	  <div>
+                             <i  class="material-icons md-36 red" ng-click="declineRequest($index)">delete</i>
+                         	  </div>
                            </div>
                            </div>  
                           </md-item-content>

@@ -67,6 +67,6 @@ md-toolbar:not(.md-hue-1),
   fill: #fff;
 }
 
-.user-avatar {
+#member-icon{
   border-radius: 99%;
 }

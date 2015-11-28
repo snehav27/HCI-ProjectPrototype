@@ -1,1 +1,15 @@
-<h1>Contact Us</h1>
+
+<h3>Contact Us</h3>
+<md-input-container class="md-block">
+    <label>Type your query</label>
+    <textarea ng-model="query" columns="1" md-maxlength="150" rows="5" ></textarea>
+</md-input-container>
+<div layout="column" layout-align="center center" layout-paddind>
+ <div class="md-caption"  ng-show='isQueryEmpty' style="color:red;">
+        Query cannot be empty
+ </div> 
+ <div>
+ </br>
+<md-button class="md-raised" ng-click="sendQuery()"> Send</md-button>
+ </div>	
+</div>
