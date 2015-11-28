@@ -1,1 +1,31 @@
-<h1>Home</h1>
+<div  layout="column" layout-align="center center">
+	<div><h3>Home</h3> 
+	</div>
+
+<div class="whiteframedemoBasicUsage" layout="column" layout-fill style="padding-bottom: 32px;">
+  <md-whiteframe class="md-whiteframe-z1" layout="row" layout-align="space-around center" ng-click="goToPage('/points')" >
+  	<span flex="20"></span>
+    <span flex="30" class="md-body-2"> POINTS </span>
+    <span flex="30" class="md-body-2">450</span>
+    <span flex="20"></span>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z2" layout="row" layout-align="space-around center" ng-click="goToPage('/checkin')">
+    <span flex="20"></span>
+    <span flex="30" class="md-body-2"> CHECK IN</span>
+    <span flex="30"> <img src="img/Google-Maps-icon.png" class="checkin-icon" alt="checkIn logo" class="checkIn-logo"> <!-- <i class="material-icons md-72 red">pin_drop</i> --> </span>
+    <span flex="20"></span>
+  </md-whiteframe>
+   <md-whiteframe class="md-whiteframe-z2" layout="row" layout-align="space-around center" ng-click="goToPage('/selfiEvent')">
+    <span flex="10"></span>
+    <span flex="40" class="md-body-2"> Submit Selfie Event</span>
+    <span flex="40" > <i class="material-icons">add_a_photo</i><span>
+    <span flex="10"></span>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z2" layout="row" layout-align="space-around center" ng-click="goToPage('/events')">
+    <span flex="10"></span>
+    <span flex="40" class="md-body-2"> What's Happening In Boston </span>
+    <span flex="40" ><i class="material-icons">forward</i><span>
+    <span flex="10"></span>
+  </md-whiteframe>
+</div>
+</div>

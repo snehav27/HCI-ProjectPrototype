@@ -38,7 +38,7 @@
   <script src="directive/avatar.js"></script>
 </head>
 <body md-theme="{{theme}}" md-theme-watch  ng-controller="menuCtrl">
-   <div ng-show = 'isloginLocation()'>
+   <div ng-if ='isloginLocation()'>
       <img src="img/UCBlogo.jpg" alt="UCB logo" class="ucb-logo">
     </div>
   <div  layout="column" class="contentdemoBasicUsage" ng-if='!isloginLocation()'>
@@ -63,6 +63,6 @@
 </div>
 </md-toolbar>
 </div>
-<div ng-include="'views/menu/menu.html'"></div>
+<div ng-if='!isloginLocation()' ng-include="'views/menu/menu.html'"></div>
 </body>
 </html>
