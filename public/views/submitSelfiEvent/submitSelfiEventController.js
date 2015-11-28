@@ -5,5 +5,7 @@
     Email  : hci.cs5340@gmail.com
 */
 app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) {
-
+	$scope.hours = ('1','2','3','4','5','6').split(' ').map(function(hour) {
+        return {hour: hour};
+      })
 });

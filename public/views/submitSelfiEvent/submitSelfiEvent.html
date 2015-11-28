@@ -1,1 +1,58 @@
-<h1> Submit Selfi Event </h1>
+<div layout="column" layout="column" layout-align="center center">
+<div>
+<h3>Check-In at Selfie - Event</h3>
+</div>
+<form name="eventForm">
+	<div layout layout-sm="column">
+      <md-input-container class="md-block">
+        <label>Event Name:</label>
+        <input md-maxlength="50" required name="name" ng-model="event.name">
+        <div ng-messages="eventForm.name.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+        </div>
+	</div>
+	<div layout layout-sm="column">
+      </md-input-container>
+	  <md-input-container class="md-block">
+        <label>Description</label>
+        <textarea ng-model="event.description" columns="1" md-maxlength="150" rows="5"></textarea>
+        <div ng-messages="eventForm.description.$error">
+          <div ng-message="required">This is required.</div>
+          <div ng-message="md-maxlength">The description has to be less than 150 characters long.</div>
+        </div>
+      </md-input-container>
+ 	</div>
+	<div layout layout-sm="column">
+	  <md-input-container flex>
+          <label>Event Category</label>
+          <md-select ng-model="event.categories">
+            <md-option ng-repeat="category in categories" value="{{category.name}}">
+              {{category.name}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+	</div>
+	<div layout layout-sm="column">
+        <md-datepicker ng-model="event.eventdate" md-placeholder="Enter date"></md-datepicker>
+    </div>
+	<div layout layout-sm="column">
+	  <md-button class="md-icon-button md-primary" aria-label="Settings" flex="grow">
+		Add Photo <i class="material-icons">add_a_photo</i>
+      </md-button>
+	</div>
+	<div layout layout-sm="column">
+	  <md-input-container flex>
+          <label>Enter time (in hours)</label>
+          <md-select ng-model="event.hours">
+            <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+              {{state.abbrev}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+	</div>
+	<div layout layout-sm="column">
+		<md-button class="md-raised md-warn">Back</md-button>	
+		<md-button class="md-raised md-primary">Check-In</md-button>
+   </div>
+</form>
