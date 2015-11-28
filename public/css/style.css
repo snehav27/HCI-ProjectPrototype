@@ -5,6 +5,9 @@ div {
    margin: 0px;
    padding: 0px;
 }
+h1,h2,h3{
+	text-align:center;
+}
 #profile-icon {
   border-radius: 99%;
 }
@@ -13,6 +16,12 @@ div {
 	height: 20%;
 }
 
+.angular-google-map-container { 
+	height: 400px;
+	width: 80%
+	margin: 0px;
+	padding: 0px;
+}
 .whiteframedemoBasicUsage md-whiteframe {
   background: #fff;
   margin: 10px;
