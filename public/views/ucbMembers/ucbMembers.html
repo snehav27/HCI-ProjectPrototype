@@ -23,7 +23,7 @@
                   <md-card flex-gt-sm="90" flex-gt-md="80">
                     <md-card-content>
                       <md-list>
-                        <md-item ng-repeat="item in activity | filter:search">
+                        <md-item ng-repeat="item in userData | filter:search">
                           <md-item-content>
                           <div layout="row" layout-align="space-between center">
                           	<div layout="row">
@@ -36,7 +36,9 @@
                             </div>
                             </div>
                             <div>
-                              <md-button class="md-raised" ng-disabled="expression">Connect</md-button>
+                              <md-button class="md-raised md-primary" ng-if="isConnect(item.status)" ng-click="addFriend($index)"><span class="md-caption">{{item.status}}</span></md-button>
+                              <md-button class="md-raised md-warn" ng-if="isRequestSent(item.status)" ng-click="unFriend($index)"><span class="md-caption">Cancel Request</span></md-button>
+                              <md-button class="md-raised" ng-if="isfriend(item.status)" ng-disabled="isfriend(item.status)"><span class="md-caption">{{item.status}}</span></md-button>
                            </div>
                            </div>  
                           </md-item-content>
