@@ -4,7 +4,7 @@
     Details: Application Config for application.
     Email  : technovators.msd@gmail.com
 */
-  var app = angular.module('ucbApp', [ 'ui.router', 'ngAnimate', 'ngMaterial', 'uiGmapgoogle-maps']);
+  var app = angular.module('ucbApp', [ 'ui.router', 'ngAnimate', 'ngMaterial', 'uiGmapgoogle-maps', 'vAccordion']);
 	app.run(['$rootScope', '$state', '$stateParams',
 			function ($rootScope, $state, $stateParams) {
 				$rootScope.$state = $state;
