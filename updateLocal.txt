@@ -1,0 +1,7 @@
+To Update to the ProjectPrototype
+
+Open a Terminal
+cd to your project directory
+
+git remote add upstream https://github.com/snehav27/HCI-ProjectPrototype
+git pull --rebase upstream master
