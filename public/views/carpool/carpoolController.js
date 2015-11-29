@@ -4,7 +4,8 @@
     Details: carpool Controller for application.
     Email  : hci.cs5340@gmail.com
 */
-app.controller('carpoolCtrl', function ($scope, $rootScope, $location) {
+app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) {
+
 
   $scope.carpoolData = [
       {
@@ -45,10 +46,32 @@ app.controller('carpoolCtrl', function ($scope, $rootScope, $location) {
     ];
 
     $scope.gotToCarpoolDetailPage = function() {
-      $location.url('/carpoolInfoPage');
+      console.log("zzzzzz");
+      $location.url('/carpoolDetails');
     }
 
     $scope.goToCreateCarpool = function() {
       $location.url('/createCarpool');
     }
+
+    $scope.submitCarpool = function() {
+      if($scope.carpoolCreate.eventName != null && $scope.carpoolCreate.fromPlace != null && $scope.carpoolCreate.toPlace != null && $scope.carpoolCreate.dateTime != null) {
+        $scope.carpoolCreate = {
+          eventName: ' ',
+          fromPlace: ' ',
+          toPlace: ' ',
+          dateTime: ' '
+        };
+      showToastMessage('Created Carpool Successfully');
+      } 
+    }
+    function showToastMessage(message) {
+    $mdToast.show(
+      $mdToast.simple()
+        .content(message)
+        .position('top right')
+        .hideDelay(3000)
+    );
+  };
+
 });

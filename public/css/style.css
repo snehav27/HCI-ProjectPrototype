@@ -29,6 +29,9 @@ h1,h2,h3{
   outline:none;
 }
 
+md-item-content {
+  outline:none;
+}
 
 .whiteframedemoBasicUsage md-whiteframe .checkin-icon {
 	width: 72px;
@@ -69,4 +72,9 @@ md-toolbar:not(.md-hue-1),
 
 #member-icon{
   border-radius: 99%;
+}
+
+
+.inputdemoErrors .inputErrorsApp {
+  min-height: 48px; 
 }

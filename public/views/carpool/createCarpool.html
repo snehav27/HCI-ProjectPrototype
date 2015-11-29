@@ -1,1 +1,31 @@
 <h3> Create Carpool</h3>
+<div ng-controller="carpoolCtrl" layout="column" class="inputdemoErrors">
+  <md-content layout-padding="">
+    <form name="carpoolForm">
+      <md-input-container class="md-block">
+        <label>Event Name</label>
+        <input required="" name="eventName" ng-model="carpoolCreate.eventName">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Pickup Point </label>
+        <input required="" name="fromPlace" ng-model="carpoolCreate.fromPlace">
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Destination</label>
+        <input required="" name="toPlace" ng-model="carpoolCreate.toPlace">       
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Date/Time:</label>
+        <input required="" name="dateTime" ng-model="carpoolCreate.dateTime">
+      </md-input-container>
+      <div layout="row" layout-align="center center">
+      <md-button class="md-button md-raised" ng-click="submitCarpool()">
+      	Create carpool
+  	  </md-button>
+  	</div>
+    </form>
+  </md-content>
+
+</div>

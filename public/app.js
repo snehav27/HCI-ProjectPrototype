@@ -101,13 +101,13 @@
 				url: '/createCarpool',
 				templateUrl: 'views/carpool/createCarpool.html',
 				controller: 'carpoolCtrl',
-				onEnter: function () { console.log("enter carpool.html"); }
+				onEnter: function () { console.log("enter createCarpool.html"); }
 			})
-			.state('carpoolInfoPage', {
-				url: '/carpoolInfoPage',
-				templateUrl: 'views/carpool/carpoolInfoPage.html',
+			.state('carpoolDetails', {
+				url: '/carpoolDetails',
+				templateUrl: 'views/carpool/carpoolDetails.html',
 				controller: 'carpoolCtrl',
-				onEnter: function () { console.log("enter carpool.html"); }
+				onEnter: function () { console.log("enter carpoolDetails.html"); }
 			})
 			.state('contactUs', {
 				url: '/contactUs',
