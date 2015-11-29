@@ -6,4 +6,8 @@
 */
 app.controller('pointsCtrl', function ($scope, $rootScope, $location) {
 
+	$scope.goToPage = function(page) {
+		$location.url(page);
+	}
+	
 });	

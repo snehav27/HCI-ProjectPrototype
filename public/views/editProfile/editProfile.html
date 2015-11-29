@@ -1,1 +1,42 @@
-<h1>EditProfile</h1>
+<div layout="column" layout-align="center center" layout-padding>
+    <div>
+        <h3>Edit Profile</h3>
+    </div>
+    <div layout="row" layout-align="space-between center" layout-padding>
+		<div><user-avatar id="profile-icon" layout-margin></user-avatar></div>
+		<div layout="row" layout-margin> 
+			<md-button class="md-button md-raised">
+        		<label for="file-input">Select</label>  
+      		</md-button>
+      		<input id="file-input" type="file" style="display:none;">
+		</div>
+	</div>
+    <div layout="row" layout-align="space-between center" layout-padding>
+	    <form>
+      		<div layout layout-sm="column">
+        		<md-input-container flex>
+          			<label>New Password</label>
+          			<input ng-model="user.newPassword" type="password">
+        		</md-input-container>
+        		<md-input-container flex>
+          			<label>Confirm Password</label>
+          			<input ng-model="user.confirmPassword" type="password">
+        		</md-input-container>
+        		<md-input-container flex>
+          			<label>Change Email</label>
+          			<input ng-model="user.email" type="email">
+        		</md-input-container>
+        	</div>
+    	</form>
+    </div>
+    <div>
+    	<span style="color: red" ng-show="!isNewPasswordMatch"> New Password Doesnt Match!</span>
+  		<span style="color: red" ng-show="!isNewPasswordEmpty"> New Password Cannot Be Empty!</span> 
+  		<span ng-show="isChangePasswordSuccess"> Password Changed Successfully</span>
+    </div>
+    <div>
+    	<md-button class="md-button md-primary md-raised" ng-click="updatePassword()">
+        	Update
+      	</md-button>
+   	</div>
+</div>
