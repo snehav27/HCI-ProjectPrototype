@@ -1,1 +1,61 @@
-<h1>Events</h1>
+<div layout="column" layout-align="space-between center" ng-controller="historyCtrl">
+    <div>
+        <h3>What's Happening In Boston</h3>
+        </br>
+    </div>
+    <div layout="column" class="relative" layout-fill role="main">
+		<div layout="row" layout-sm="row"  layout-align="center center">
+			<div>
+				<md-input-container style="line-height:15px;width:250px;" flex>
+					<label>Search Events</label>
+					<input ng-model="search.events.name">
+				</md-input-container>
+			</div>
+			<div>
+				<i class="material-icons" flex>search</i>
+			</div>
+		</div>
+        <v-accordion class="vAccordion--default" style="width:300px">
+            <v-pane ng-repeat="date in eventData">
+                <v-pane-header>
+                    <p class="md-body-2"> 
+			      {{ ::date.when }}
+                    </p>
+                </v-pane-header>
+                <v-pane-content>
+                    <v-accordion class="vAccordion--default" style="width:280px">
+                    	<v-pane ng-repeat="event in date.events">
+                    		<v-pane-header>
+			                	<p class="md-body-2"> 
+						    		{{ ::event.name }}
+			                    </p>
+			                </v-pane-header>
+			                <v-pane-content>
+			                	<div layout="column" layout-align="space-between center">
+			                		<div layout="column" layout-align="space-between center">
+					                	<div class="md-caption">
+										    <b>Description :</b> {{ ::event.description }}
+										</div>
+										<div class="md-caption">
+										    <b>From :</b> {{ ::event.from}}
+										</div>
+										<div class="md-caption">
+										    <b>To :</b> {{ ::event.to}}
+										</div>
+										<div class="md-caption">
+										    <a href="#">More Info</a>
+										</div>
+									</div>
+									<div layout="row">
+										<md-button class="md-raised" ng-if="isAttending(event.rsvp)" ng-click=""><span class="md-caption">REMOVE RSVP</span></md-button>
+										<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click=""><span class="md-caption">RSVP</span></md-button>
+									</div>
+								</div>
+			            	</v-pane-content>
+                    	</v-pane>
+                	</v-accordion>
+                </v-pane-content>
+            </v-pane>
+        </v-accordion>
+    </div>
+</div>
