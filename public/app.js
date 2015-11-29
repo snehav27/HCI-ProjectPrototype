@@ -97,6 +97,18 @@
 				controller: 'carpoolCtrl',
 				onEnter: function () { console.log("enter carpool.html"); }
 			})
+			.state('createCarpool', {
+				url: '/createCarpool',
+				templateUrl: 'views/carpool/createCarpool.html',
+				controller: 'carpoolCtrl',
+				onEnter: function () { console.log("enter carpool.html"); }
+			})
+			.state('carpoolInfoPage', {
+				url: '/carpoolInfoPage',
+				templateUrl: 'views/carpool/carpoolInfoPage.html',
+				controller: 'carpoolCtrl',
+				onEnter: function () { console.log("enter carpool.html"); }
+			})
 			.state('contactUs', {
 				url: '/contactUs',
 				templateUrl: 'views/contactUs/contactUs.html',

@@ -1,1 +1,65 @@
-<h1>Carpool</h1>
+
+  <div layout="column" layout-align="center center" ng-controller="carpoolCtrl">
+
+    <div layout="row" layout-align="center center">
+       <h3  >Carpool</h3> 
+       <i class="material-icons md-24" layout-margin>directions_car</i>
+    </div>	</br>
+    <div layout="column" class="relative" layout-fill role="main">
+     <div layout="row" layout-align="center center">
+     <md-button class="md-raised " style="width:300px;" ng-click="goToCreateCarpool()"> Create Carpool</md-button>
+     </div> 
+     <div layout="row" layout-sm="row"  layout-align="center center">
+    <div>      
+      <md-input-container style="line-height:15px;width:280px;" flex>
+        <label>Search Carpool By Event Name</label>
+          <input ng-model="search.eventName">
+      </md-input-container>
+    </div>
+    <div>
+	 <i class="material-icons" flex>search</i>
+    </div>
+	</div>
+      <md-content flex md-scroll-y>
+        <ui-view layout="column" layout-fill>
+              <div layout="row" layout-align="center center">
+                  <md-card flex-sm="90" flex-gt-sm="90">
+                    <md-card-content>
+                      <md-list>
+                        <md-item ng-repeat="post in carpoolData | filter:search">
+                          <md-item-content>
+                          <div layout="column" layout-align="center start">                          	
+                            <div>
+                              <p class="md-subhead inset" layout ="row" layout-margin>
+                                <p><b>Event name : </b> {{post.eventName}} </p>
+                              <p>  
+                            </div>                            
+                            <div>
+                            	<p layout ="row" layout-margin>
+                            	<p class="md-caption">
+                            		<b>From : </b>{{post.from}}
+                            	</p>	
+
+                            	<p class="md-caption">
+                            		<b>To : </b> {{post.to}}
+                            	</p>
+                            	</p>
+                            	<p class="md-caption">
+                            		<b>Start Date/Time : </b> {{post.startDate}} {{post.startTime}}
+                            	</p >
+                            </div>
+                           </div>  
+                          </md-item-content>
+                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        </md-item>
+                        <md-divider></md-divider>
+                      </md-list>
+                    </md-card-content>
+                  </md-card>
+              </div>
+   
+        </ui-view>
+      </md-content>
+    </div>
+</div>

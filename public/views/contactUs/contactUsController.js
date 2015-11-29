@@ -9,6 +9,7 @@ app.controller('contactUsCtrl', function ($scope, $rootScope, $location, $mdToas
 	$scope.isQueryEmpty =false;
 
 	$scope.sendQuery = function() {
+    $scope.isQueryEmpty =false;
 	if($scope.query != null) {
 
 		showToastMessage('Thanks for Contacting Us .. We will get back to you soon');

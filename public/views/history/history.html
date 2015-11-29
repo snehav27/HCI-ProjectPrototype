@@ -8,7 +8,10 @@
             <v-pane ng-repeat="event in pastEvents">
                 <v-pane-header>
                     <p class="md-body-2"> 
-			      {{ ::event.name }}
+			      {{ ::event.name }}   
+                    </p>
+                    <p class="md-caption">
+                        <b>Date :</b> {{ ::event.date}}
                     </p>
                 </v-pane-header>
                 <v-pane-content>
@@ -17,10 +20,7 @@
                     </p>
                     <p class="md-caption">
                         <b>Points :</b> {{ ::event.points}}
-                    </p>
-                    <p class="md-caption">
-                        <b>Date :</b> {{ ::event.date}}
-                    </p>
+                    </p>                    
                     <p class="md-caption" layout="row" layout-align="space-between center">
                         <span class="md-caption"><b>Speaker :</b> {{ ::event.speaker}}</span>
                         <a href="::event.website"><i class="material-icons">link</i></a>

@@ -11,7 +11,7 @@
         <ui-view layout="column" layout-fill>
           <div class="inset" hide-sm></div>
               <div layout="row" layout-align="center center">
-                  <md-card flex-gt-sm="90" flex-gt-md="80">
+                  <md-card flex-sm="90" flex-gt-sm="90">
                     <md-card-content>
                       <md-list>
                         <md-item ng-repeat="item in friendRequestData | filter:search">
@@ -26,8 +26,7 @@
                     
                             </div>
                             </div>
-                            <div layout="row" layout-align="space-between center" layout-margin>
-                              <!-- <md-button class="md-raised md-primary" ><span class="md-caption">Accept</span></md-button> -->
+                            <div layout="row" layout-align="space-between center" layout-margin>                              
                               <div>
                               <i class="material-icons md-36 green" ng-click="acceptRequest($index);showSimpleToast();">done</i>
                           	  </div>
