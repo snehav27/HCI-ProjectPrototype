@@ -21,6 +21,10 @@
                     <p class="md-caption">
                         <b>Date :</b> {{ ::event.date}}
                     </p>
+                    <p class="md-caption" layout="row" layout-align="space-between center">
+                        <span class="md-caption"><b>Speaker :</b> {{ ::event.speaker}}</span>
+                        <a href="::event.website"><i class="material-icons">link</i></a>
+                    </p>
                 </v-pane-content>
             </v-pane>
         </v-accordion>

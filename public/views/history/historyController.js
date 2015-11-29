@@ -10,22 +10,25 @@ app.controller('historyCtrl', function ($scope, $rootScope, $location) {
           'name'      : 'Woment Empowerment',
           'date'       : '3-Feb-2015',
           'description'  : 'Woment Empowerment for UCB members',
-          'location'     : 'Boston, MA',
-          'points'		 : '400'
+          'speaker'     : 'Natalia',
+          'points'		 : '400',
+          'website' : 'www.google.com'
         },
         {
           'name'      : 'Voting information',
           'date'       : '9-Jun-2015',
           'description'  : 'Voting information for UCB members',
-          'location'     : 'Boston, MA',
-          'points'		 : '150'
+          'speaker'     : 'Bruce',
+          'points'		 : '150',
+          'website' : 'www.google.com'
         },
         {
           'name'      : 'Flu shot',
           'date'       : '27-Aug-2016',
           'description'  : 'Flu shot for UCB members',
-          'location'     : 'Boston, MA',
-          'points'		 : '280'
+          'speaker'     : 'Shiney',
+          'points'		 : '280',
+          'website' : 'www.google.com'
         }
     ];
 
