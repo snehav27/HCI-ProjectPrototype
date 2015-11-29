@@ -1,43 +1,28 @@
-
-  <div layout="column" layout-align="space-between center" ng-controller="ucbMembersCtrl">
-
+<div layout="column" layout-align="space-between center" ng-controller="historyCtrl">
     <div>
-    	 <h3>Past Events</h3>
-    	</br>
-    </div>	
+        <h3>Past Events</h3>
+        </br>
+    </div>
     <div>
-        
-        	<v-accordion class="vAccordion--default"  style ="width:300px" multiple>
-			  <!-- add expanded attribute to open the section -->
-			  <v-pane>
-			    <v-pane-header>
-			      Pane header #1
-			    </v-pane-header>
-
-			    <v-pane-content>
-			      Pane content #1
-			    </v-pane-content>
-			  </v-pane>
-
-			  <v-pane >
-			    <v-pane-header>
-			      Pane header #2
-			    </v-pane-header>
-
-			    <v-pane-content>
-			      Pane content #2
-			    </v-pane-content>
-			  </v-pane>
-			  <v-pane >
-			    <v-pane-header>
-			      Pane header #3
-			    </v-pane-header>
-
-			    <v-pane-content>
-			      Pane content #3
-			    </v-pane-content>
-			  </v-pane>
-			</v-accordion>
-    	
+        <v-accordion class="vAccordion--default" style="width:300px" multiple>
+            <v-pane ng-repeat="event in pastEvents">
+                <v-pane-header>
+                    <p class="md-body-2"> 
+			      {{ ::event.name }}
+                    </p>
+                </v-pane-header>
+                <v-pane-content>
+                    <p class="md-caption">
+                        <b>Description:</b> {{ ::event.description }}
+                    </p>
+                    <p class="md-caption">
+                        <b>Points :</b> {{ ::event.points}}
+                    </p>
+                    <p class="md-caption">
+                        <b>Date :</b> {{ ::event.date}}
+                    </p>
+                </v-pane-content>
+            </v-pane>
+        </v-accordion>
     </div>
 </div>
