@@ -1,0 +1,51 @@
+<div layout="column" layout-align="center center" layout-padding>
+  <div>
+        <h3>Check-In at Event</h3>
+  </div>
+  <form name="userForm">
+	<div layout layout-sm="row">
+		<div layout="row" layout-align="space-between center">
+            <span class="md-head-1">Event Name : </span>
+			<span class="md-body-1" ng-bind="eventInfo.name"></span>
+        </div>
+	</div>			
+	<div layout layout-sm="row">
+		<div layout="row" layout-align="space-between center">
+         			<span class="md-head-1">Event description :</span>
+					<span class="md-body-1" ng-bind="eventInfo.description"></span>
+        </div>
+	</div>			
+	<div layout layout-sm="row">
+		<div layout="row" layout-align="space-between center">
+					<span class="md-head-1"> Event date : </span>
+					<span class="md-body-1" ng-bind="eventInfo.date"></span>
+        </div>
+	</div>
+	<div layout="row" layout-margin> 
+			<md-button class="md-button md-raised">
+        		<label for="file-input">Add Photo</label> 
+				<i class="material-icons" flex>add_a_photo</i>						
+      		</md-button>
+      		<input id="file-input" type="file" style="display:none;">
+	</div>
+	<div layout layout-sm="row">
+		<div layout="row" layout-align="space-between center">
+			<span class="md-head-1">Select Hours for which you attended events: </span>
+		</div>
+	</div>
+	<div layout>
+      <md-slider flex class="md-primary" md-discrete ng-model="hours" step="1" min="1" max="10" aria-label="rating">
+      </md-slider>
+    </div>	
+	<div layout layout-sm="row">
+			<div layout layout-sm="row">
+				<md-button class="md-button md-warn md-raised" ng-click="goToPage('/home')">
+					Back 
+				</md-button>
+				<md-button class="md-button md-primary md-raised" ng-click="checkinAtevent()">
+					Check-in 
+				</md-button>
+			</div>
+	</div>			
+</form>
+</div>
