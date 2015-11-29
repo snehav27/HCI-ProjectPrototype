@@ -1,105 +1,109 @@
-<h2>Check-In</h2>
-<div layout layout-sm="column" layout-align="center">
-	  <md-button class="md-primary md-raised" aria-label="Settings">
-		<br>
-		<i class="material-icons">person_pin</i>
-		<br>
-		Submit Selfie event 
-      </md-button>
-</div>
+<h3>Check-In at UCB events</h3>
 <div id="map_canvas">
     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
         <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" clickable='true'>
         </ui-gmap-markers>
     </ui-gmap-google-map>
 </div>
-<h3>Events</h3>
-<md-content layout-padding layout="column">
-    <form ng-submit="$event.preventDefault()">
-      <md-autocomplete
-          ng-disabled="ctrl.isDisabled"
-          md-no-cache="ctrl.noCache"
-          md-selected-item="ctrl.selectedItem"
-          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-          md-search-text="ctrl.searchText"
-          md-selected-item-change="ctrl.selectedItemChange(item)"
-          md-items="item in ctrl.querySearch(ctrl.searchText)"
-          md-item-text="item.name"
-          md-min-length="0"
-          placeholder="Search UCB event"
-          md-menu-class="autocomplete-custom-template">
-        <md-item-template>
-          <span class="item-title">
-            <span> {{item.name}} </span>
-          </span>
-          <span class="item-metadata">
-            <span class="item-metastat">
-              <strong>{{item.description}}</strong> Description
-            </span>
-            <span class="item-metastat">
-              <strong>{{item.location}}</strong> Location
-            </span>
-          </span>
-        </md-item-template>
-      </md-autocomplete>
-    </form>
-  </md-content>
 
- <!-- delete this form when above thing works-->
-<form name="myForm">
-    <md-input-container class="md-block">
-		
-      <label>UCB Event to check-in <i class="material-icons">search</i></label>
-      <md-select name="myModel" ng-model="myModel" required>
-        <md-option value="1">Event 1</md-option>
-        <md-option value="2">Event 2</md-option>
-      </md-select>
-      <div class="errors" ng-messages="myForm.myModel.$error" ng-if="myForm.$dirty">
-        <div ng-message="required">Required</div>
-      </div>
-    </md-input-container>
-    <div layout="row">
-      <md-button ng-click="clearValue()" ng-disabled="!myModel" style="margin-right: 20px;">CANCLE</md-button>
-      <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="md-primary" layout layout-align="center end">
-	  Check-In</md-button>
+<div layout="column" layout-align="center center" ng-controller="checkinCtrl">
+    <div layout="column">
+		<div layout="row" layout-sm="row"  layout-align="center center">
+		<div>
+			<md-input-container style="line-height:15px;width:250px;" flex>
+			<label>Search Event</label>
+			<input ng-model="search.name">
+			</md-input-container>
+		</div>
+		<div>
+			<i class="material-icons" flex>search</i>
+		</div>
+		</div>
+		<div layout="row" layout-sm="row"  layout-align="center center">
+		<md-content flex md-scroll-y >
+          	<v-accordion class="vAccordion--default"  multiple layout-align="center">
+			  <!-- add expanded attribute to open the section -->
+			  <v-pane ng-repeat="item in eventInfo | filter:search">
+			    <v-pane-header layout-align="center">
+					<div layout="row" layout-align="space-between center">
+                      	<div layout="row">
+                            <div layout="column"class="md-tile-content">
+                              <h4>{{item.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+			    </v-pane-header layout-align="center">
+			    <v-pane-content>
+			      {{item.description}}
+			    </v-pane-content>
+				<div layout-align="center">
+                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
+                </div>
+			  </v-pane>
+			  <md-divider></md-divider>
+			</v-accordion>
+      </md-content>
+	  </div>
     </div>
-  </form>
- 
-  <div ng-cloak>
-  <md-content layout-align="center">
+<h3>Check-In at Current and Past UCB events</h3>
+<div ng-cloak>
+  <md-content >
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Current Events">
-        <md-content class="md-padding" layout-align="center">
-			<md-list flex="grow" layout="column">
-					<md-list-item class="md-2-line" ng-repeat="marker in randomMarkers" flex="grow">
-					<div class="md-list-item-text">
-						<md-button>
-						<h4>{{marker.title}}</h4>
-						<p>{{marker.latitude}}</p>
-						<p>{{marker.longitude}}</p>
-						</md-button>
-						<md-divider ></md-divider>
-					</div>
-				</md-list-item>
-			</md-list>
-        </md-content>
-      </md-tab>
-      <md-tab label="Past Events">
-        <md-content class="md-padding" layout-align="center">
-			<md-list flex="grow" layout="column" layout-align="center">
-				<md-list-item class="md-2-line" ng-repeat="marker in randomMarkers" flex="grow" layout-align="center">
-					<div class="md-list-item-text">
-						<md-button flex="grow" layout-align="center">
-						<h4>{{marker.title}}</h4>
-						<p>{{marker.latitude}}</p>
-						<p>{{marker.longitude}}</p>
-						</md-button>
-						<md-divider ></md-divider>
-					</div>
-				</md-list-item>
-			</md-list>
-        </md-content>
+        <md-content class="md-padding">
+		<div>
+        	<v-accordion class="vAccordion--default"  style ="width:300px" multiple>
+			  <!-- add expanded attribute to open the section -->
+			  <v-pane ng-repeat="item in eventInfo">
+			    <v-pane-header>
+					<div layout="row" layout-align="space-between center">
+                      	<div layout="row">
+                            <div layout="column"class="md-tile-content">
+                              <h4>{{item.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+			    </v-pane-header>
+			    <v-pane-content>
+			      {{item.description}}
+			    </v-pane-content>
+				<div>
+                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
+                </div>
+			  </v-pane>
+			  <md-divider></md-divider>
+			</v-accordion>
+			</div>
+		</md-content>
+		</md-tab>
+		<md-tab label="Past Events">
+		<md-content class="md-padding" layout-align="center">
+		<div>
+        	<v-accordion class="vAccordion--default"  style ="width:300px" multiple>
+			  <!-- add expanded attribute to open the section -->
+			  <v-pane ng-repeat="item in eventInfo">
+			    <v-pane-header>
+					<div layout="row" layout-align="space-between center">
+                      	<div layout="row">
+                            <div layout="column"class="md-tile-content">
+                              <h4>{{item.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+			    </v-pane-header>
+			    <v-pane-content>
+			      {{item.description}}
+			    </v-pane-content>
+				<div>
+                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
+                </div>
+			  </v-pane>
+			  <md-divider></md-divider>
+			</v-accordion>
+			</div>
+		</md-content>
       </md-tab>
     </md-tabs>
   </md-content>
+</div>
 </div>

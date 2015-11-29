@@ -6,82 +6,68 @@
 */
 
 app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
-	function DemoCtrl ($timeout, $q, $log) { 	
-	var self = this;
-    self.simulateQuery = false;
-    self.isDisabled    = false;
-    self.repos         = loadAll();
-    self.querySearch   = querySearch;
-    self.selectedItemChange = selectedItemChange;
-    self.searchTextChange   = searchTextChange;
-	// Internal methods
-    // ******************************
-    /**
-     * Search for repos... use $timeout to simulate
-     * remote dataservice call.
-     */
-    function querySearch (query) {
-      var results = query ? self.repos.filter( createFilterFor(query) ) : self.repos,
-          deferred;
-      if (self.simulateQuery) {
-        deferred = $q.defer();
-        $timeout(function () { deferred.resolve( results ); }, Math.random() * 1000, false);
-        return deferred.promise;
-      } else {
-        return results;
-      }
-    }
-    function searchTextChange(text) {
-      $log.info('Text changed to ' + text);
-    }
-    function selectedItemChange(item) {
-      $log.info('Item changed to ' + JSON.stringify(item));
-    }
-    /**
-     * Build `components` list of key/value pairs
-     */
-    function loadAll() {
-      var repos = [
+	
+	$scope.checkin = function() {
+		$location.url('/eventCheckin');
+	}
+	$scope.eventInfo = [
         {
           'name'      : 'Woment Empowerment',
-          'time'       : '3-Feb-2016',
+          'date'       : '2-Jan-2016',
+		  'time'		: '11.00 am',
           'description'  : 'Woment Empowerment for UCB members',
-          'location'     : 'Boston, MA',
+          'address'     : '97 Salem St, Boston, MA 02113',
         },
+        {
+          'name'      : 'I Empowerment workshop',
+          'date'       : '2-Jan-2016',
+		  'time'		: '11.00 am',
+          'description'  : 'Woment Empowerment for UCB members',
+          'address'     : '97 Salem St, Boston, MA 02113',
+        },
+        {
+          'name'      : 'II Empowerment workshop',
+          'date'       : '2-Jan-2016',
+		  'time'		: '11.00 am',
+          'description'  : 'Woment Empowerment for UCB members',
+          'address'     : '97 Salem St, Boston, MA 02113',
+        },
+        {
+          'name'      : 'III Empowerment workshop',
+          'date'       : '2-Jan-2016',
+		  'time'		: '11.00 am',
+          'description'  : 'Woment Empowerment for UCB members',
+          'address'     : '97 Salem St, Boston, MA 02113',
+        },		
         {
           'name'      : 'Voting information',
-          'time'       : '3-Feb-2016',
+          'date'       : '1-Feb-2016',
+		  'time'		: '11.00 am',
           'description'  : 'Voting information for UCB members',
-          'location'     : 'Boston, MA',
+          'address'     : '355 Binney St, Cambridge, MA 02139',
         },
         {
+          'name'      : 'I Voting information',
+          'date'       : '1-Feb-2016',
+		  'time'		: '11.00 am',
+          'description'  : 'Voting information for UCB members',
+          'address'     : '355 Binney St, Cambridge, MA 02139',
+        },
+        {
+          'name'      : 'II Voting information',
+          'date'       : '1-Feb-2016',
+		  'time'		: '11.00 am',
+          'description'  : 'Voting information for UCB members',
+          'address'     : '355 Binney St, Cambridge, MA 02139',
+        },		
+        {
           'name'      : 'Flu shot',
-          'time'       : '3-Feb-2016',
+          'date'       : '3-Dec-2015',
+		  'time'		: '11.00 am',
           'description'  : 'Flu shot for UCB members',
-          'location'     : 'Boston, MA',
+          'address'     : '55 Fruit St, Boston, MA 02114',
         },
       ];
-      return repos.map( function (repo) {
-        repo.value = repo.name.toLowerCase();
-        return repo;
-      });
-    }
-    /**
-     * Create filter function for a query string
-     */
-    function createFilterFor(query) {
-      var lowercaseQuery = angular.lowercase(query);
-      return function filterFn(item) {
-        return (item.value.indexOf(lowercaseQuery) === 0);
-      };
-    }
-	}
-	$scope.clearValue = function() {
-			$scope.myModel = undefined;
-	};
-	$scope.save = function() {
-		alert('Form was valid!');
-	};
 	$scope.map = {
       center: {
         latitude: 40.1451,
