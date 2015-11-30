@@ -139,6 +139,12 @@
                 controller: 'messageCtrl',
                 onEnter: function () { console.log("Message a contact.html"); }
             })
+            .state('chat', {
+                url: '/chat',
+                templateUrl: 'views/message/chat.html',
+                controller: 'messageCtrl',
+                onEnter: function () { console.log("Chat Window.html"); }
+            })
 			.state('friends', {
 				url: '/friends',
 				templateUrl: 'views/friends/friends.html',

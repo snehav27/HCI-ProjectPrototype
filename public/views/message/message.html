@@ -15,45 +15,96 @@
                 <i class="material-icons" flex>search</i>
             </div>
         </div>
-        <md-content flex md-scroll-y>
-            <ui-view layout="column" layout-fill>
-                <div class="inset" hide-sm></div>
-                <div layout="row" layout-align="center center">
-                    <md-card flex-sm="90" flex-gt-sm="90">
-                        <md-card-content>
-                            <md-list>
-                                <md-item ng-repeat="item in userData | filter:search">
-                                    <md-item-content>
-                                        <div layout="row" layout-align="space-between center">
-                                            <div layout="row">
-                                                <div class="md-tile-left inset">
-                                                    <user-avatar id="member-icon"></user-avatar>
-                                                </div>
-                                                <div layout="column" class="md-tile-content">
-                                                    <h4>{{item.who}}</h4>
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Message a Contact">
+                    <md-content class="md-padding">
+                        <div>
+                            <md-content flex md-scroll-y>
+                                <ui-view layout="column" layout-fill>
+                                    <h3>Message a Contact</h3>
+                                    <div class="inset" hide-sm></div>
+                                    <div layout="row" layout-align="center center">
 
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <md-button class="md-raised" ng-click="goToPage(item.who, '/messageContact')" style="width:100px;"> + Message </md-button>
-                                                <!-- 
-                                                <md-button class="md-raised md-primary" ng-if="isConnect(item.status)" ng-click="addFriend($index)"><span class="md-caption">{{item.status}}</span></md-button>
-                                                <md-button class="md-raised md-warn" ng-if="isRequestSent(item.status)" ng-click="unFriend($index)"><span class="md-caption">Cancel Request</span></md-button>
-                                                <md-button class="md-raised" ng-if="isfriend(item.status)" ng-disabled="isfriend(item.status)"><span class="md-caption">{{item.status}}</span></md-button>
-                                                -->
-                                            </div>
-                                        </div>
-                                    </md-item-content>
-                                    <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                                    <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                                </md-item>
-                                <md-divider></md-divider>
-                            </md-list>
-                        </md-card-content>
-                    </md-card>
-                </div>
+                                        <md-card flex-sm="90" flex-gt-sm="90">
+                                            <md-card-content>
 
-            </ui-view>
-        </md-content>
+                                                <md-list>
+                                                    <md-item ng-repeat="item in userData | filter:search">
+                                                        <md-item-content>
+                                                            <div layout="row" layout-align="space-between center">
+                                                                <div layout="row">
+                                                                    <div class="md-tile-left inset">
+                                                                        <user-avatar id="member-icon"></user-avatar>
+                                                                    </div>
+                                                                    <div layout="column" class="md-tile-content">
+                                                                        <h4>{{item.who}}</h4>
+
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <md-button class="md-raised" ng-click="goToContact(item.who)" style="width:100px;"> + Message </md-button>
+                                                                </div>
+                                                            </div>
+                                                        </md-item-content>
+                                                        <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                                                        <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                                                    </md-item>
+                                                    <md-divider></md-divider>
+                                                </md-list>
+                                            </md-card-content>
+                                        </md-card>
+                                    </div>
+
+                                </ui-view>
+                            </md-content>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Chats">
+                    <md-content class="md-padding" layout-align="center">
+                        
+                        <div>
+                        <md-content flex md-scroll-y>
+                            <ui-view layout="column" layout-fill>
+                                <md-body-2>Chats</md-body-2>
+                                <div class="inset" hide-sm></div>
+                                <div layout="row" layout-align="center center">
+
+                                    <md-card flex-sm="90" flex-gt-sm="90">
+                                        <md-card-content>
+
+                                            <md-list>
+                                                <md-item ng-repeat="item in userData | filter:search">
+                                                    <md-item-content>
+                                                        <div layout="row" layout-align="space-between center">
+                                                            <div layout="row">
+                                                                <div class="md-tile-left inset">
+                                                                    <user-avatar id="member-icon"></user-avatar>
+                                                                </div>
+                                                                <div layout="column" class="md-tile-content">
+                                                                    <h4 style="padding:0px; margin-top:15px;">{{item.who}}</h4>
+                                                                    <p style="padding:0px; margin:0px;" ng-click="goToChat(item.who, item.chat)">{{item.chat}}</p>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </md-item-content>
+                                                    <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                                                    <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                                                </md-item>
+                                                <md-divider></md-divider>
+                                            </md-list>
+                                        </md-card-content>
+                                    </md-card>
+                                </div>
+
+                            </ui-view>
+                        </md-content>
     </div>
+    </md-content>
+    </md-tab>
+    </md-tabs>
+    </md-content>
 </div>
+    </div>
