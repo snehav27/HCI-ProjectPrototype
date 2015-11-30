@@ -14,7 +14,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: '35th Anderson Tree Lighting',
         		from: '1:00 PM',
         		to: '10:34 PM',
-        		description: 'Come enjoy Boston\'s Biggest & Best Neighborhood Tree Lighting! FREE & all are welcome!! Photos with Santa, Petting Zoo, Face Painting, Balloon Artists, Letters to Santa, Horse Drawn Sleigh Rides, Carousel, Amusement Rides. All rides: $1.00 (Rides close promptly at 5:00pm). LIVE ENTERTAINMENT: Dance Academy, Riverside Theater Works, O\'Dwyer School of Irish Dancing & MORE. Tree lighting at 4:30 with Mayor Martin J. Walsh and our 2015 Tree Lighter, Ray Capobianco.',
+        		description: 'Come enjoy Boston\'s Biggest & Best Neighborhood Tree Lighting!',
         		rsvp: 'True',
         		number: '0'
         	}
@@ -27,7 +27,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Community Partners in Health Professions',
         		from: '8:00 AM',
         		to: '10:34 PM',
-        		description: 'Daily Schedule 9:00 to 10:30 Session One 10:30 to 10:45 Break 10:45 to 12:15 Session Two 12:15 to 1:00 Lunch 1:00 to 2:15 Session Three: Workshops/Technology 2:15 to 2:30 Break 2:35 to 3:30 Session Four: Skill Building, Independent Study, Typing Master, 1:1 Case Management',
+        		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -35,7 +35,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Bridges to College Biotechnology Information Session',
         		from: '3:00 PM',
         		to: '6:00 PM',
-        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program. We can get you ready for a college Biotechnology certificate with better math and science skills. Our Biotechnology graduates are prepared to work in a lab and make about $40,000 a year. Sharpen those Algebra and critical thinking skills and come see if our program is a fit for your future. During our three-hour session, we\'ll tell you about Biotech at Bridges to College, answer your questions about the program, and assess your math and critical thinking skills. We\'re located on the third floor at 75 Federal Street, between the South Station and Downtown Crossing stops. If you have any questions, feel free to reach Craig at cmisner@jvs-boston.org or 617-399-3228, visit our website, or check out our Facebook page! We look forward to seeing you!',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'True',
         		number: '0'
         	},
@@ -43,7 +43,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Movie Mondays - Inside Out',
         		from: '3:30 PM',
         		to: '10:34 PM',
-        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays! Age 13+, FREE! For more information email ayarc@childrens.harvard.edu or text 617-596-0811',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
         		number: '0'
         	}
@@ -56,7 +56,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Community Partners in Health Professions',
         		from: '8:00 AM',
         		to: '10:34 PM',
-        		description: 'Daily Schedule 9:00 to 10:30 Session One 10:30 to 10:45 Break 10:45 to 12:15 Session Two 12:15 to 1:00 Lunch 1:00 to 2:15 Session Three: Workshops/Technology 2:15 to 2:30 Break 2:35 to 3:30 Session Four: Skill Building, Independent Study, Typing Master, 1:1 Case Management',
+        		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'True',
         		number: '0'
         	},
@@ -64,7 +64,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Bridges to College Biotechnology Information Session',
         		from: '3:00 PM',
         		to: '6:00 PM',
-        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program. We can get you ready for a college Biotechnology certificate with better math and science skills. Our Biotechnology graduates are prepared to work in a lab and make about $40,000 a year. Sharpen those Algebra and critical thinking skills and come see if our program is a fit for your future. During our three-hour session, we\'ll tell you about Biotech at Bridges to College, answer your questions about the program, and assess your math and critical thinking skills. We\'re located on the third floor at 75 Federal Street, between the South Station and Downtown Crossing stops. If you have any questions, feel free to reach Craig at cmisner@jvs-boston.org or 617-399-3228, visit our website, or check out our Facebook page! We look forward to seeing you!',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -72,7 +72,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Movie Mondays - Inside Out',
         		from: '3:30 PM',
         		to: '10:34 PM',
-        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays! Age 13+, FREE! For more information email ayarc@childrens.harvard.edu or text 617-596-0811',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
         		number: '0'
         	}
@@ -85,7 +85,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Community Partners in Health Professions',
         		from: '8:00 AM',
         		to: '10:34 PM',
-        		description: 'Daily Schedule 9:00 to 10:30 Session One 10:30 to 10:45 Break 10:45 to 12:15 Session Two 12:15 to 1:00 Lunch 1:00 to 2:15 Session Three: Workshops/Technology 2:15 to 2:30 Break 2:35 to 3:30 Session Four: Skill Building, Independent Study, Typing Master, 1:1 Case Management',
+        		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -93,7 +93,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Bridges to College Biotechnology Information Session',
         		from: '3:00 PM',
         		to: '6:00 PM',
-        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program. We can get you ready for a college Biotechnology certificate with better math and science skills. Our Biotechnology graduates are prepared to work in a lab and make about $40,000 a year. Sharpen those Algebra and critical thinking skills and come see if our program is a fit for your future. During our three-hour session, we\'ll tell you about Biotech at Bridges to College, answer your questions about the program, and assess your math and critical thinking skills. We\'re located on the third floor at 75 Federal Street, between the South Station and Downtown Crossing stops. If you have any questions, feel free to reach Craig at cmisner@jvs-boston.org or 617-399-3228, visit our website, or check out our Facebook page! We look forward to seeing you!',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -101,7 +101,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Movie Mondays - Inside Out',
         		from: '3:30 PM',
         		to: '10:34 PM',
-        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays! Age 13+, FREE! For more information email ayarc@childrens.harvard.edu or text 617-596-0811',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'True',
         		number: '0'
         	}
@@ -114,7 +114,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Community Partners in Health Professions',
         		from: '8:00 AM',
         		to: '10:34 PM',
-        		description: 'Daily Schedule 9:00 to 10:30 Session One 10:30 to 10:45 Break 10:45 to 12:15 Session Two 12:15 to 1:00 Lunch 1:00 to 2:15 Session Three: Workshops/Technology 2:15 to 2:30 Break 2:35 to 3:30 Session Four: Skill Building, Independent Study, Typing Master, 1:1 Case Management',
+        		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -122,7 +122,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Bridges to College Biotechnology Information Session',
         		from: '3:00 PM',
         		to: '6:00 PM',
-        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program. We can get you ready for a college Biotechnology certificate with better math and science skills. Our Biotechnology graduates are prepared to work in a lab and make about $40,000 a year. Sharpen those Algebra and critical thinking skills and come see if our program is a fit for your future. During our three-hour session, we\'ll tell you about Biotech at Bridges to College, answer your questions about the program, and assess your math and critical thinking skills. We\'re located on the third floor at 75 Federal Street, between the South Station and Downtown Crossing stops. If you have any questions, feel free to reach Craig at cmisner@jvs-boston.org or 617-399-3228, visit our website, or check out our Facebook page! We look forward to seeing you!',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -130,7 +130,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Movie Mondays - Inside Out',
         		from: '3:30 PM',
         		to: '10:34 PM',
-        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays! Age 13+, FREE! For more information email ayarc@childrens.harvard.edu or text 617-596-0811',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
         		number: '0'
         	}
@@ -143,7 +143,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Community Partners in Health Professions',
         		from: '8:00 AM',
         		to: '10:34 PM',
-        		description: 'Daily Schedule 9:00 to 10:30 Session One 10:30 to 10:45 Break 10:45 to 12:15 Session Two 12:15 to 1:00 Lunch 1:00 to 2:15 Session Three: Workshops/Technology 2:15 to 2:30 Break 2:35 to 3:30 Session Four: Skill Building, Independent Study, Typing Master, 1:1 Case Management',
+        		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -151,7 +151,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Bridges to College Biotechnology Information Session',
         		from: '3:00 PM',
         		to: '6:00 PM',
-        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program. We can get you ready for a college Biotechnology certificate with better math and science skills. Our Biotechnology graduates are prepared to work in a lab and make about $40,000 a year. Sharpen those Algebra and critical thinking skills and come see if our program is a fit for your future. During our three-hour session, we\'ll tell you about Biotech at Bridges to College, answer your questions about the program, and assess your math and critical thinking skills. We\'re located on the third floor at 75 Federal Street, between the South Station and Downtown Crossing stops. If you have any questions, feel free to reach Craig at cmisner@jvs-boston.org or 617-399-3228, visit our website, or check out our Facebook page! We look forward to seeing you!',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
         		number: '0'
         	},
@@ -159,7 +159,7 @@ app.controller('eventsCtrl', function ($scope) {
         		name: 'Movie Mondays - Inside Out',
         		from: '3:30 PM',
         		to: '10:34 PM',
-        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays! Age 13+, FREE! For more information email ayarc@childrens.harvard.edu or text 617-596-0811',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
         		number: '0'
         	}

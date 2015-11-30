@@ -15,47 +15,60 @@
 				<i class="material-icons" flex>search</i>
 			</div>
 		</div>
-        <v-accordion class="vAccordion--default" style="width:300px">
-            <v-pane ng-repeat="date in eventData">
-                <v-pane-header>
-                    <p class="md-body-2"> 
-			      {{ ::date.when }}
-                    </p>
-                </v-pane-header>
-                <v-pane-content>
-                    <v-accordion class="vAccordion--default" style="width:280px">
-                    	<v-pane ng-repeat="event in date.events">
-                    		<v-pane-header>
-			                	<p class="md-body-2"> 
-						    		{{ ::event.name }}
-			                    </p>
-			                </v-pane-header>
-			                <v-pane-content>
-			                	<div layout="column" layout-align="space-between center">
-			                		<div layout="column" layout-align="space-between center">
-					                	<div class="md-caption">
-										    <b>Description :</b> {{ ::event.description }}
+		<md-content flex md-scroll-y>
+			<ui-view layout="column" layout-fill>
+				<div class="inset" hide-sm></div>
+				<div layout="row" layout-align="center center">
+					<md-list>
+						<md-item ng-repeat="date in eventData">
+							<md-card flex-sm="90" flex-gt-sm="90">
+								<md-card-content>
+									<div layout="column" layout-sm="column"  layout-align="space-around center">
+										<div>
+											<p class="md-title">
+												{{ ::date.when }}
+											</p>
 										</div>
-										<div class="md-caption">
-										    <b>From :</b> {{ ::event.from}}
-										</div>
-										<div class="md-caption">
-										    <b>To :</b> {{ ::event.to}}
-										</div>
-										<div class="md-caption">
-										    <a href="#">More Info</a>
-										</div>
+									
+										<v-accordion class="vAccordion--default" style="width:280px">
+					                    	<v-pane ng-repeat="event in date.events">
+					                    		<v-pane-header>
+								                	<p class="md-body-2"> 
+											    		{{ ::event.name }}
+								                    </p>
+								                </v-pane-header>
+								                <v-pane-content>
+								                	<div layout="column" layout-align="space-between center">
+								                		<div layout="column" layout-align="space-between left">
+										                	<p class="md-caption">
+															    <b>Description :</b> {{ ::event.description }}
+															</p>
+															<p class="md-caption">
+															    <b>From :</b> {{ ::event.from}}
+															</p>
+															<p class="md-caption">
+															    <b>To :</b> {{ ::event.to}}
+															</p>
+															<p class="md-caption">
+															    <a href="#">More Info</a>
+															</p>
+														</div>
+														<div layout="row">
+															<md-button class="md-raised" ng-if="isAttending(event.rsvp)" ng-click=""><span class="md-caption">REMOVE RSVP</span></md-button>
+															<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click=""><span class="md-caption">RSVP</span></md-button>
+														</div>
+													</div>
+								            	</v-pane-content>
+					                    	</v-pane>
+					                	</v-accordion>
 									</div>
-									<div layout="row">
-										<md-button class="md-raised" ng-if="isAttending(event.rsvp)" ng-click=""><span class="md-caption">REMOVE RSVP</span></md-button>
-										<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click=""><span class="md-caption">RSVP</span></md-button>
-									</div>
-								</div>
-			            	</v-pane-content>
-                    	</v-pane>
-                	</v-accordion>
-                </v-pane-content>
-            </v-pane>
-        </v-accordion>
+								</md-card-content>
+							</md-card>
+					</md-list>
+				</div>
+
+			</ui-view>
+		</md-content>
     </div>
 </div>
+
