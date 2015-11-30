@@ -133,6 +133,12 @@
 				controller: 'messageCtrl',
 				onEnter: function () { console.log("enter message.html"); }
 			})
+            .state('messageContact', {
+                url: '/messageContact',
+                templateUrl: 'views/message/messageContact.html',
+                controller: 'messageCtrl',
+                onEnter: function () { console.log("Message a contact.html"); }
+            })
 			.state('friends', {
 				url: '/friends',
 				templateUrl: 'views/friends/friends.html',
