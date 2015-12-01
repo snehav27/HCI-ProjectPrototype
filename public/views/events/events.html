@@ -1,4 +1,4 @@
-<div layout="column" layout-align="space-between center" ng-controller="historyCtrl">
+<div layout="column" layout-align="space-between center" ng-controller="eventsCtrl">
     <div>
         <h3>What's Happening In Boston</h3>
         </br>
@@ -20,7 +20,7 @@
 				<div class="inset" hide-sm></div>
 				<div layout="row" layout-align="center center">
 					<md-list>
-						<md-item ng-repeat="date in eventData">
+						<md-item ng-repeat="date in eventData | filter:search" ng-init="parentIndex = $index">
 							<md-card flex-sm="90" flex-gt-sm="90">
 								<md-card-content>
 									<div layout="column" layout-sm="column"  layout-align="space-around center">
@@ -49,13 +49,17 @@
 															<p class="md-caption">
 															    <b>To :</b> {{ ::event.to}}
 															</p>
+														</div>
+														<div layout="row">
 															<p class="md-caption">
-															    <a href="#">More Info</a>
+															    <md-button md-no-ink class="md-primary" ng-click="goToEvent($index, parentIndex)">
+															    	More Info
+															    </md-button>
 															</p>
 														</div>
 														<div layout="row">
-															<md-button class="md-raised" ng-if="isAttending(event.rsvp)" ng-click=""><span class="md-caption">REMOVE RSVP</span></md-button>
-															<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click=""><span class="md-caption">RSVP</span></md-button>
+															<md-button class="md-raised md-warn" ng-if="isAttending(event.rsvp)" ng-click="removeRsvp($index, parentIndex)"><span class="md-caption">REMOVE RSVP</span></md-button>
+															<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click="addRsvp($index, parentIndex)"><span class="md-caption">RSVP</span></md-button>
 														</div>
 													</div>
 								            	</v-pane-content>

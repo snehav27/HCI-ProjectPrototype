@@ -4,7 +4,7 @@
     Details: events Controller for application.
     Email  : hci.cs5340@gmail.com
 */
-app.controller('eventsCtrl', function ($scope) {
+app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
 
 	$scope.eventData = [
       {
@@ -16,7 +16,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Come enjoy Boston\'s Biggest & Best Neighborhood Tree Lighting!',
         		rsvp: 'True',
-        		number: '0'
+        		number: '5',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Martha Wayne',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -29,7 +33,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
-        		number: '0'
+        		number: '6',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Bruce Banner',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Bridges to College Biotechnology Information Session',
@@ -37,7 +45,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'True',
-        		number: '0'
+        		number: '3',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Luke Skywalker',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Movie Mondays - Inside Out',
@@ -45,7 +57,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
-        		number: '0'
+        		number: '10',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -58,7 +74,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'True',
-        		number: '0'
+        		number: '20',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Senjougahara',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Bridges to College Biotechnology Information Session',
@@ -66,7 +86,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
-        		number: '0'
+        		number: '40',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Ming Freeman',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Movie Mondays - Inside Out',
@@ -74,7 +98,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
-        		number: '0'
+        		number: '10',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -87,7 +115,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
-        		number: '0'
+        		number: '46',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Bruce Pennyworth',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Bridges to College Biotechnology Information Session',
@@ -95,7 +127,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
-        		number: '0'
+        		number: '8',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Oswald Cobblepot',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Movie Mondays - Inside Out',
@@ -103,7 +139,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'True',
-        		number: '0'
+        		number: '14',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -116,7 +156,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
-        		number: '0'
+        		number: '34',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Alfred Martin',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Bridges to College Biotechnology Information Session',
@@ -124,7 +168,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
-        		number: '0'
+        		number: '64',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Professor Strange',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Movie Mondays - Inside Out',
@@ -132,7 +180,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
-        		number: '0'
+        		number: '1',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -145,7 +197,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
         		rsvp: 'False',
-        		number: '0'
+        		number: '64',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Doctor Who',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Bridges to College Biotechnology Information Session',
@@ -153,7 +209,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
         		rsvp: 'False',
-        		number: '0'
+        		number: '13',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Professor Zoom',
+                website: 'www.google.com'
         	},
         	{
         		name: 'Movie Mondays - Inside Out',
@@ -161,7 +221,11 @@ app.controller('eventsCtrl', function ($scope) {
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
         		rsvp: 'False',
-        		number: '0'
+        		number: '31',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
         	}
         ]
       },
@@ -175,6 +239,30 @@ app.controller('eventsCtrl', function ($scope) {
     $scope.isNotAttending = function(rsvp) {
     	var isNotAttending = (rsvp == 'False' ? true : false);
     	return isNotAttending;
+    }
+
+    $scope.addRsvp = function(index, parentIndex) {
+        $scope.eventData[parentIndex].events[index].rsvp = 'True';
+    }
+
+    $scope.removeRsvp = function(index, parentIndex) {
+        $scope.eventData[parentIndex].events[index].rsvp = 'False';
+    }
+
+    $scope.goToEvent = function(index, parentIndex) {
+        $location.url("/eventInfo?index=" + index + "&parent=" + parentIndex);
+    }
+
+    $scope.getDetails = function() {
+        var search = $location.search();
+        var parentIndex = search.parent;
+        var childIndex = search.index;
+        $scope.date = $scope.eventData[parentIndex].when;
+        $scope.eventInfo = $scope.eventData[parentIndex].events[childIndex];
+    }
+
+    $scope.goToPage = function(page) {
+        $location.url(page);
     }
 
 });

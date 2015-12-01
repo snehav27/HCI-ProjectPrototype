@@ -1,0 +1,48 @@
+<div layout="column" layout-align="space-between center" ng-controller="eventsCtrl" ng-init="getDetails()">
+    <div>
+        <h3>{{eventInfo.name}}</h3>
+        </br>
+    </div>
+    <div layout="column" class="relative" layout-fill role="main">
+        <md-content flex md-scroll-y>
+            <ui-view layout="column" layout-fill>
+                <div class="inset" hide-sm></div>
+                <div layout="row" layout-align="center center">
+                    <md-card flex-sm="90" flex-gt-sm="90">
+                        <md-card-content>
+                            <div layout="column" layout-align="space-between left">
+                                <p class="md-caption">
+                                    <b>Description :</b> {{eventInfo.description}}
+                                </p>
+                                <p class="md-caption" layout="row" layout-align="space-between center">
+                                    <span class="md-caption"><b>Speaker :</b> {{eventInfo.speaker}}</span>
+                                    <a href="eventInfo.website"><i class="material-icons">link</i></a>
+                                </p>
+                                <p class="md-caption">
+                                    <b>Date :</b> {{date}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>Timings :</b> {{eventInfo.from}} to {{eventInfo.to}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>Address :</b> {{eventInfo.address}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>Points :</b> {{eventInfo.points}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>Attendees :</b> {{eventInfo.number}}
+                                </p>
+                            </div>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-button class="md-raised" ng-click="goToPage('/events')">
+                        BACK
+                    </md-button>
+                </div>
+            </ui-view>
+        </md-content>
+    </div>
+</div>

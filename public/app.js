@@ -85,6 +85,12 @@
 				controller: 'eventsCtrl',
 				onEnter: function () { console.log("enter events.html"); }
 			})
+			.state('eventInfo', {
+				url: '/eventInfo',
+				templateUrl: 'views/events/eventInfo.html',
+				controller: 'eventsCtrl',
+				onEnter: function () { console.log("enter eventInfo.html"); }
+			})
 			.state('ucbMembers', {
 				url: '/ucbMembers',
 				templateUrl: 'views/ucbMembers/ucbMembers.html',
