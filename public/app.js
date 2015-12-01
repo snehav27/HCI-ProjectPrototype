@@ -109,11 +109,11 @@
 				controller: 'carpoolCtrl',
 				onEnter: function () { console.log("enter createCarpool.html"); }
 			})
-			.state('carpoolDetails', {
-				url: '/carpoolDetails',
-				templateUrl: 'views/carpool/carpoolDetails.html',
+			.state('carpoolInfoPage', {
+				url: '/carpoolInfoPage',
+				templateUrl: 'views/carpool/carpoolInfoPage.html',
 				controller: 'carpoolCtrl',
-				onEnter: function () { console.log("enter carpoolDetails.html"); }
+				onEnter: function () { console.log("enter carpoolInfoPage.html"); }
 			})
 			.state('contactUs', {
 				url: '/contactUs',

@@ -1,3 +1,7 @@
+body {
+  background:#F6F6F6;
+}
+
 p#login_error {
   color: red;
 }
@@ -29,7 +33,7 @@ h1,h2,h3{
   outline:none;
 }
 
-md-item-content {
+div,md-item-content {
   outline:none;
 }
 
@@ -78,3 +82,20 @@ md-toolbar:not(.md-hue-1),
 .inputdemoErrors .inputErrorsApp {
   min-height: 48px; 
 }
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; 
+}
+.tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid black; 
+}
+
+.tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: #3F51B5;
+      color:black; 
+}
+.tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; 
+}
+

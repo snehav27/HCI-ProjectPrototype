@@ -22,18 +22,16 @@
 	</div>
       <md-content flex md-scroll-y>
               <div layout="row" layout-align="center center">
-                  <md-card flex-sm="90" flex-gt-sm="90">
-                    <md-card-content>
+                   <md-whiteframe class="md-whiteframe-z1" flex-sm="90" flex-gt-sm="90" layout-padding>
+                    
                       <md-list>
-                        <md-item ng-repeat="post in carpoolData | filter:search">
+                        <md-item ng-repeat="post in carpoolData | filter:search" layout-margin>
                           <md-item-content >
                           <div layout="column" layout-align="center start" >                          	
                             <div>
                               <p class="md-subhead inset" layout ="row" layout-margin>
-                                <p><b>Event name : </b> {{post.eventName}}  
-                                  
+                                <p><b>Event name : </b> {{post.eventName}}                                    
                                 </p>
-
                               <p>  
                             </div>                            
                             <div>
@@ -48,10 +46,8 @@
                             	</p>
                             	<p class="md-caption">
                             		<b>Start Date/Time : </b> {{post.startDate}} {{post.startTime}}                                
-                               </p>
-                               <p layout ="row" layout-align="center center">
-                                <md-button class="md-primary md-raised" ng-cick="gotToCarpoolDetailPage($index)"> Select </md-button>
-                               </p>
+                               </p> 
+                               <md-button class="md-raised md-primary" ng-click="gotoCarpoolInfo($index)"> Select </md-button>                              
                             </div>
                            </div>  
                           </md-item-content>
@@ -60,7 +56,7 @@
                         </md-item>
                         <md-divider></md-divider>
                       </md-list>
-                    </md-card-content>
-                  </md-card>
+                    
+                   </md-whiteframe>
       </md-content>
     </div>

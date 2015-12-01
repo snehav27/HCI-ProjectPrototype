@@ -1,13 +1,16 @@
 
 <div flex-sm="90" flex-gt-sm="90">
 <h3>Contact Us</h3>
-<md-input-container class="md-block">
-    <label>Type your query</label>
-    <textarea ng-model="query" columns="1" md-maxlength="150" rows="5" ></textarea>
-</md-input-container>
 <div layout="column" layout-align="center center" layout-paddind>
- <div class="md-caption"  ng-show='isQueryEmpty' style="color:red;">
-        Query cannot be empty
+	<md-input-container class="md-block"  style="width:280px;background:white;">
+	    <label>Type your query</label>
+	    <textarea ng-model="query" columns="1" md-maxlength="150" rows="5" ></textarea>
+	</md-input-container>
+</div>
+</div>
+<div layout="column" layout-align="center center" layout-paddind>
+ 	<div class="md-caption"  ng-show='isQueryEmpty' style="color:red;">
+    	Query cannot be empty
  </div> 
  <div>
  </br>

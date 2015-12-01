@@ -56,3 +56,12 @@
 	font-size: 48px;
 	color: #d2281b;
  }
+
+.material-icons.md-30.red { 
+	font-size: 30px;
+	color: red;
+ }
+  .material-icons.md-30.green { 
+	font-size: 30px;
+	color: green;
+ }

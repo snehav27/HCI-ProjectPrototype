@@ -1,1 +1,95 @@
-<h3>Car Detail Info Page</h3>
+<div layout="column" layout-align="space-between center" ng-controller="carpoolCtrl" ng-init="getCarpoolInfoDetails()">
+    <div>
+        <h3>Car Info Page</h3>
+        </br>
+    </div>
+    <div layout="column" class="relative" layout-fill role="main">
+        <md-content flex md-scroll-y>
+            <ui-view layout="column" layout-fill>
+                <div class="inset" hide-sm></div>
+                <div layout="row" layout-align="start start" layout-padding layout-margin>
+                    <md-button class="md-raised" ng-click="goToPage('/carpool')">
+                        BACK
+                    </md-button>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-card flex-sm="90" flex-gt-sm="90">
+                        <md-card-content>
+                            <div layout="column" layout-align="space-between left">
+                                <p class="md-body-2">
+                                    <b>Event Name :</b> {{carpoolDetailInfo.eventName}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>From :</b> {{carpoolDetailInfo.from}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>To :</b> {{carpoolDetailInfo.to}} 
+                                </p>
+                                <p class="md-caption">
+                                    <b>Date :</b> {{carpoolDetailInfo.from}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>Time :</b> {{carpoolDetailInfo.startTime}}
+                                </p>
+                                <p class="md-caption">
+                                    <b>By :</b> {{carpoolDetailInfo.by}}
+                                </p>
+                            </div>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div layout="row" layout-align="space-around center">
+                	<md-input-container class="md-block" style="width:60%">
+    					<label>Comment On The Post</label>
+    					<textarea ng-model="query" columns="1" md-maxlength="50" rows="2" ></textarea>
+					</md-input-container>
+					<md-button class="md-raised md-primary"> Comment </md-button>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <md-card flex-sm="90" flex-gt-sm="90">
+                        <md-card-content>
+                            <div data-ng-repeat="comment in carpoolDetailInfo.comments">
+                            	<div ng-if="$even" layout="column" layout-align="start start" style="background-color:#f1f1f1">
+	                                <p class="md-body-1">
+	                                    {{comment.comment}}
+	                                </p>
+	                                <p class="md-caption">
+	                                    <b>By :</b> {{comment.by}}
+	                                </p>
+                            	</div>   
+                            	<div ng-if="$odd" layout="column" layout-align="center end">
+	                                <p class="md-body-1">
+	                                    {{comment.comment}}
+	                                </p>
+	                                <p class="md-caption">
+	                                    <b>By :</b> {{comment.by}}
+	                                </p>
+                            	</div>                                                  
+                            </div>
+                        </md-card-content>
+                    </md-card>
+                </div>                
+            </ui-view>
+        </md-content>
+    </div>
+</div>
+
+<!-- {
+      	eventName:'Woman Empowerment 2',
+        from: 'Northeastern',
+        to: 'Roxbury tobin center',
+        startDate: 'Dec 23 2015',
+        startTime: '11:30 am' ,
+        by: 'Alex Corner',
+        comments: [   
+                                {  by : "John",  
+                                  comment  : "I am In",
+                                  date       : 'Aug/23/2015'
+                                   },
+
+                                { by : "Alex",  
+                                  comment  : "Awesome message me your number",
+                                  date       : 23 
+                                }
+                              ]
+      } -->

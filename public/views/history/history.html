@@ -1,9 +1,13 @@
-<div layout="column" layout-align="space-between center" ng-controller="historyCtrl">
-    <div>
-        <h3>Past Events</h3>
-        </br>
-    </div>
-    <div>
+<div layout="column" ng-controller="historyCtrl">
+    <!-- <div layout="row" layout-align="start start" layout-margin>
+         <md-button class="md-fab md-mini md-primary" aria-label="Back" ng-click="goToPage('/profile')">
+            <i class="material-icons" ng-click="goToPage('/profile')">reply</i>
+        </md-button>
+    </div> -->
+    <div layout="column" layout-align="center center"> 
+        <h3>Past Events</h3>        
+    </div>    
+    <div layout="column" layout-align="space-between center">
         <v-accordion class="vAccordion--default" style="width:300px" multiple>
             <v-pane ng-repeat="event in pastEvents">
                 <v-pane-header>

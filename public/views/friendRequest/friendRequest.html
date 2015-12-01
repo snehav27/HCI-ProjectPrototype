@@ -21,17 +21,17 @@
                             <div class="md-tile-left inset">
                                 <user-avatar id="member-icon"></user-avatar>
                             </div>
-                            <div layout="column"class="md-tile-content">
-                              <h4>{{item.who}}</h4>
+                            <div layout="column" layout-align="center center" class="md-tile-content">
+                              <div class="md-body-2">{{item.who}}</div>
                     
                             </div>
                             </div>
                             <div layout="row" layout-align="space-between center" layout-margin>                              
                               <div>
-                              <i class="material-icons md-36 green" ng-click="acceptRequest($index);showSimpleToast();">done</i>
+                              <i class="material-icons md-30 green" ng-click="acceptRequest($index);showSimpleToast();">done</i>
                           	  </div>
                           	  <div>
-                             <i  class="material-icons md-36 red" ng-click="declineRequest($index)">delete</i>
+                             <i  class="material-icons md-30 red" ng-click="declineRequest($index)">delete</i>
                          	  </div>
                            </div>
                            </div>  

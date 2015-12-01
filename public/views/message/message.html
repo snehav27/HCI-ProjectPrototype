@@ -15,14 +15,15 @@
                 <i class="material-icons" flex>search</i>
             </div>
         </div>
+        <div class="tabsdemoDynamicHeight">
         <md-content>
-            <md-tabs md-dynamic-height md-border-bottom>
-                <md-tab label="Message a Contact">
+            <md-tabs md-dynamic-height md-border-bottom >
+                <md-tab label="Message a Contact"> 
                     <md-content class="md-padding">
                         <div>
                             <md-content flex md-scroll-y>
                                 <ui-view layout="column" layout-fill>
-                                    <h3>Message a Contact</h3>
+                                    <div layout="row" layout-align="center center" class="md-subhead">Message a Contact</div>
                                     <div class="inset" hide-sm></div>
                                     <div layout="row" layout-align="center center">
 
@@ -37,13 +38,13 @@
                                                                     <div class="md-tile-left inset">
                                                                         <user-avatar id="member-icon"></user-avatar>
                                                                     </div>
-                                                                    <div layout="column" class="md-tile-content">
+                                                                    <div layout="column" class="md-body-2">
                                                                         <h4>{{item.who}}</h4>
 
                                                                     </div>
                                                                 </div>
                                                                 <div>
-                                                                    <md-button class="md-raised" ng-click="goToContact(item.who)" style="width:100px;"> + Message </md-button>
+                                                                    <md-button class="md-raised md-primary" ng-click="goToContact(item.who)" style="width:100px;"> + Message </md-button>
                                                                 </div>
                                                             </div>
                                                         </md-item-content>
@@ -66,10 +67,10 @@
                         
                         <div>
                         <md-content flex md-scroll-y>
-                            <ui-view layout="column" layout-fill>
-                                <md-body-2>Chats</md-body-2>
+                            <ui-view layout="column" layout-fill>                                
+                                <div layout="row" layout-align="center center" class="md-subhead">Chats</div>
                                 <div class="inset" hide-sm></div>
-                                <div layout="row" layout-align="center center">
+                                <div layout="row" layout-align="space-between center">
 
                                     <md-card flex-sm="90" flex-gt-sm="90">
                                         <md-card-content>
@@ -82,12 +83,14 @@
                                                                 <div class="md-tile-left inset">
                                                                     <user-avatar id="member-icon"></user-avatar>
                                                                 </div>
-                                                                <div layout="column" class="md-tile-content">
-                                                                    <h4 style="padding:0px; margin-top:15px;">{{item.who}}</h4>
-                                                                    <p style="padding:0px; margin:0px;" ng-click="goToChat(item.who, item.chat)">{{item.chat}}</p>
+                                                                <div layout="column" class="md-tile-content" ng-click="goToChat(item.who, item.chat)">
+                                                                    <div class="md-body-2"  style="padding:0px; margin-top:15px;">{{item.who}}</div>
+                                                                    <p class="md-body-1" style="padding:0px; margin:0px;" ng-click="goToChat(item.who, item.chat)">{{item.chat}}</p>
                                                                 </div>
-                                                                
-                                                            </div>
+                                                                </div>
+                                                                <div layout="column" layout-align="center end">
+                                                                    <i class="material-icons" ng-click="goToChat(item.who, item.chat)">reply</i>
+                                                                </div>                                                            
                                                         </div>
                                                     </md-item-content>
                                                     <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
@@ -106,5 +109,6 @@
     </md-tab>
     </md-tabs>
     </md-content>
+</div>
 </div>
     </div>

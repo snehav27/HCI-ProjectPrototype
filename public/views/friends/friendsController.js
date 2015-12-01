@@ -17,8 +17,8 @@ app.controller('friendsCtrl', function ($scope, $rootScope, $location) {
       }
     ];
 
-    $scope.goToMessagePage = function() {
-    	$location.url('/message');
+    $scope.goToMessagePage = function(contact) {
+    	$location.url('/messageContact?contact='+contact);
     }
 
 });
