@@ -1,109 +1,86 @@
-<h3>Check-In at UCB events</h3>
-<div id="map_canvas">
-    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
-        <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" clickable='true'>
-        </ui-gmap-markers>
-    </ui-gmap-google-map>
-</div>
-
-<div layout="column" layout-align="center center" ng-controller="checkinCtrl">
-    <div layout="column">
-		<div layout="row" layout-sm="row"  layout-align="center center">
-		<div>
-			<md-input-container style="line-height:15px;width:250px;" flex>
-			<label>Search Event</label>
-			<input ng-model="search.name">
-			</md-input-container>
-		</div>
-		<div>
-			<i class="material-icons" flex>search</i>
-		</div>
-		</div>
-		<div layout="row" layout-sm="row"  layout-align="center center">
-		<md-content flex md-scroll-y >
-          	<v-accordion class="vAccordion--default"  multiple layout-align="center">
-			  <!-- add expanded attribute to open the section -->
-			  <v-pane ng-repeat="item in eventInfo | filter:search">
-			    <v-pane-header layout-align="center">
-					<div layout="row" layout-align="space-between center">
-                      	<div layout="row">
-                            <div layout="column"class="md-tile-content">
-                              <h4>{{item.name}}</h4>
-                            </div>
-                        </div>
-                    </div>
-			    </v-pane-header layout-align="center">
-			    <v-pane-content>
-			      {{item.description}}
-			    </v-pane-content>
-				<div layout-align="center">
-                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
-                </div>
-			  </v-pane>
-			  <md-divider></md-divider>
-			</v-accordion>
-      </md-content>
-	  </div>
+<div layout="column" layout-align="space-between center" ng-controller="checkinCtrl">
+    <div>
+        <h3>Check-In at UCB events</h3>
+        </br>
     </div>
-<h3>Check-In at Current and Past UCB events</h3>
-<div ng-cloak>
-  <md-content >
-    <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Current Events">
-        <md-content class="md-padding">
-		<div>
-        	<v-accordion class="vAccordion--default"  style ="width:300px" multiple>
-			  <!-- add expanded attribute to open the section -->
-			  <v-pane ng-repeat="item in eventInfo">
-			    <v-pane-header>
-					<div layout="row" layout-align="space-between center">
-                      	<div layout="row">
-                            <div layout="column"class="md-tile-content">
-                              <h4>{{item.name}}</h4>
-                            </div>
-                        </div>
-                    </div>
-			    </v-pane-header>
-			    <v-pane-content>
-			      {{item.description}}
-			    </v-pane-content>
-				<div>
-                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
-                </div>
-			  </v-pane>
-			  <md-divider></md-divider>
-			</v-accordion>
+	<div id="map_canvas">
+		<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+			<ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" clickable='true'>
+			</ui-gmap-markers>
+		</ui-gmap-google-map>
+	</div>
+    <div layout="column" class="relative" layout-fill role="main">
+		<div layout="row" layout-sm="row"  layout-align="center center">
+			<div>
+				<md-input-container style="line-height:15px;width:250px;" flex>
+					<label>Search Events</label>
+					<input ng-model="search.events.name">
+				</md-input-container>
 			</div>
-		</md-content>
-		</md-tab>
-		<md-tab label="Past Events">
-		<md-content class="md-padding" layout-align="center">
-		<div>
-        	<v-accordion class="vAccordion--default"  style ="width:300px" multiple>
-			  <!-- add expanded attribute to open the section -->
-			  <v-pane ng-repeat="item in eventInfo">
-			    <v-pane-header>
-					<div layout="row" layout-align="space-between center">
-                      	<div layout="row">
-                            <div layout="column"class="md-tile-content">
-                              <h4>{{item.name}}</h4>
-                            </div>
-                        </div>
-                    </div>
-			    </v-pane-header>
-			    <v-pane-content>
-			      {{item.description}}
-			    </v-pane-content>
-				<div>
-                   <md-button class="md-raised" ng-click="checkin(item)">Check-In</md-button>
-                </div>
-			  </v-pane>
-			  <md-divider></md-divider>
-			</v-accordion>
+			<div>
+				<i class="material-icons" flex>search</i>
 			</div>
+		</div>
+		<md-content flex md-scroll-y>
+			<ui-view layout="column" layout-fill>
+				<div class="inset" hide-sm></div>
+				<div layout="row" layout-align="center center">
+					<md-list>
+						<md-item ng-repeat="date in eventData | filter:search" ng-init="parentIndex = $index">
+							<md-card flex-sm="90" flex-gt-sm="90">
+								<md-card-content>
+									<div layout="column" layout-sm="column"  layout-align="space-around center">
+										<div>
+											<p class="md-title">
+												{{ ::date.when }}
+											</p>
+										</div>
+										<div ng-show="foundNoUncheckedEvents(date.events)"> 
+											No more events for today! :( <br>
+											Please check after some time! 
+										</div>
+										<v-accordion class="vAccordion--default" style="width:280px">
+					                    	<v-pane ng-repeat="event in date.events" 
+											ng-if="!event.checkin">
+					                    		<v-pane-header>
+								                	<p class="md-body-2"> 
+											    		{{ ::event.name }}
+								                    </p>
+								                </v-pane-header>
+								                <v-pane-content>
+								                	<div layout="column" layout-align="space-between center">
+								                		<div layout="column" layout-align="space-between left">
+										                	<p class="md-caption">
+															    <b>Description :</b> {{ ::event.description }}
+															</p>
+															<p class="md-caption">
+															    <b>From :</b> {{ ::event.from}}
+															</p>
+															<p class="md-caption">
+															    <b>To :</b> {{ ::event.to}}
+															</p>
+														</div>
+														<div layout="row">
+															<p class="md-caption">
+															    <md-button md-no-ink class="md-primary" ng-click="goToEvent($index, parentIndex)">
+															    	More Info
+															    </md-button>
+															</p>
+														</div>
+													</div>
+								            	</v-pane-content>
+												<div layout="row">
+													<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)"><span class="md-caption">Check-In</span></md-button>
+												</div>
+					                    	</v-pane>
+					                	</v-accordion>
+									</div>
+								</md-card-content>
+							</md-card>
+					</md-list>
+				</div>
+
+			</ui-view>
 		</md-content>
-      </md-tab>
-    </md-tabs>
-  </md-content>
-</div>
+    </div>
 </div>

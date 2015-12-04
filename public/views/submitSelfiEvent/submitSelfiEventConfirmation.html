@@ -1,12 +1,19 @@
-<div layout="column" layout-align="center center" layout-padding>
-    <div>
-		<h2>Hi Janice </h2>
-        <h3> You have successfully checked-in at the event: </h3>
-		<h3> Reading to kids</h3>
-    </div>
+<div layout="column" layout-align="space-between center" ng-init="getDetails()">
 	<div>
-	<md-button class="md-button md-primary md-raised" ng-click="goToPage('/home')">
-		Ok 
-	</md-button>
+        <h3>Hi, Janice!</h3> 
+        </br>
+    </div>
+    <div layout="column" class="relative" layout-fill role="main">
+        <md-card flex-sm="90" flex-gt-sm="90">
+            <md-card-content>
+				<h4>You have been successfully checked in at : {{selfieEvent}}</h4>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div layout="row" layout-align="center center">
+        <md-button class="md-button md-primary md-raised" ng-click="goToPage('/home')">
+            OK
+        </md-button>
 	</div>
 </div>
+ 

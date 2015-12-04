@@ -21,7 +21,7 @@ h1,h2,h3{
 }
 
 .angular-google-map-container { 
-	height: 400px;
+	height: 250px;
 	width: 80%
 	margin: 0px;
 	padding: 0px;
@@ -77,7 +77,8 @@ md-toolbar:not(.md-hue-1),
 #member-icon{
   border-radius: 99%;
 }
-
+.sliderdemoBasicUsage input[type="number"] {
+  text-align: center; }
 
 .inputdemoErrors .inputErrorsApp {
   min-height: 48px; 

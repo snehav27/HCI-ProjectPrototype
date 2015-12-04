@@ -7,67 +7,274 @@
 
 app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 	
-	$scope.checkin = function() {
-		$location.url('/eventCheckin');
+	$scope.foundNoUncheckedEvents = function(events) {
+		for (var ev = 0; ev < events.length; ev ++) {
+			event = ""
+			event = events[ev];
+			if (!event.checkin) {
+				return false;
+			}
+		}
+		return true;
 	}
-	$scope.eventInfo = [
-        {
-          'name'      : 'Woment Empowerment',
-          'date'       : '2-Jan-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Woment Empowerment for UCB members',
-          'address'     : '97 Salem St, Boston, MA 02113',
-        },
-        {
-          'name'      : 'I Empowerment workshop',
-          'date'       : '2-Jan-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Woment Empowerment for UCB members',
-          'address'     : '97 Salem St, Boston, MA 02113',
-        },
-        {
-          'name'      : 'II Empowerment workshop',
-          'date'       : '2-Jan-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Woment Empowerment for UCB members',
-          'address'     : '97 Salem St, Boston, MA 02113',
-        },
-        {
-          'name'      : 'III Empowerment workshop',
-          'date'       : '2-Jan-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Woment Empowerment for UCB members',
-          'address'     : '97 Salem St, Boston, MA 02113',
-        },		
-        {
-          'name'      : 'Voting information',
-          'date'       : '1-Feb-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Voting information for UCB members',
-          'address'     : '355 Binney St, Cambridge, MA 02139',
-        },
-        {
-          'name'      : 'I Voting information',
-          'date'       : '1-Feb-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Voting information for UCB members',
-          'address'     : '355 Binney St, Cambridge, MA 02139',
-        },
-        {
-          'name'      : 'II Voting information',
-          'date'       : '1-Feb-2016',
-		  'time'		: '11.00 am',
-          'description'  : 'Voting information for UCB members',
-          'address'     : '355 Binney St, Cambridge, MA 02139',
-        },		
-        {
-          'name'      : 'Flu shot',
-          'date'       : '3-Dec-2015',
-		  'time'		: '11.00 am',
-          'description'  : 'Flu shot for UCB members',
-          'address'     : '55 Fruit St, Boston, MA 02114',
-        },
-      ];
+	
+    $scope.checkinAtevent = function() {
+		var search = $location.search();
+        var parentIndex = search.parent;
+        var childIndex = search.index;
+        $scope.eventData[parentIndex].events[childIndex].checkin = true;
+		$scope.goToEventCheckinConfirmation(childIndex, parentIndex);
+    }
+
+	$scope.goToEventCheckinConfirmation = function(index, parentIndex) {
+        $location.url("/eventCheckinConfirmation?index=" + index + "&parent=" + parentIndex);
+    }
+	
+    $scope.goToEventCheckin = function(index, parentIndex) {
+        $location.url("/eventCheckin?index=" + index + "&parent=" + parentIndex);
+    }
+
+    $scope.getDetails = function() {
+        var search = $location.search();
+        var parentIndex = search.parent;
+        var childIndex = search.index;
+        $scope.date = $scope.eventData[parentIndex].when;
+        $scope.eventInfo = $scope.eventData[parentIndex].events[childIndex];
+    }
+
+    $scope.goToPage = function(page) {
+        $location.url(page);
+    }
+	
+	$scope.goToConfirmationPage = function(page) {
+        $location.url(page);
+    }
+	
+	$scope.eventData = [
+      {
+        when: 'Sunday, November 29th 2015',
+        events: [
+        	{
+        		name: '35th Anderson Tree Lighting',
+        		from: '1:00 PM',
+        		to: '10:34 PM',
+        		description: 'Come enjoy Boston\'s Biggest & Best Neighborhood Tree Lighting!',
+        		checkin: true,
+        		number: '5',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Martha Wayne',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+      {
+        when: 'Monday, November 30th 2015',
+        events: [
+        	{
+        		name: 'Community Partners in Health Professions',
+        		from: '8:00 AM',
+        		to: '10:34 PM',
+        		description: 'Daily Schedule 9:00 to 10:30',
+        		checkin: false,
+        		number: '6',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Bruce Banner',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Bridges to College Biotechnology Information Session',
+        		from: '3:00 PM',
+        		to: '6:00 PM',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
+        		checkin: true,
+        		number: '3',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Luke Skywalker',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Movie Mondays - Inside Out',
+        		from: '3:30 PM',
+        		to: '10:34 PM',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
+        		checkin: false,
+        		number: '10',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+      {
+        when: 'Tuesday, December 1st 2015',
+        events: [
+        	{
+        		name: 'Community Partners in Health Professions',
+        		from: '8:00 AM',
+        		to: '10:34 PM',
+        		description: 'Daily Schedule 9:00 to 10:30',
+        		checkin: true,
+        		number: '20',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Senjougahara',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Bridges to College Biotechnology Information Session',
+        		from: '3:00 PM',
+        		to: '6:00 PM',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
+        		checkin: false,
+        		number: '40',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Ming Freeman',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Movie Mondays - Inside Out',
+        		from: '3:30 PM',
+        		to: '10:34 PM',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
+        		checkin: false,
+        		number: '10',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+      {
+        when: 'Wednesday, December 2nd 2015',
+        events: [
+        	{
+        		name: 'Community Partners in Health Professions',
+        		from: '8:00 AM',
+        		to: '10:34 PM',
+        		description: 'Daily Schedule 9:00 to 10:30',
+        		checkin: false,
+        		number: '46',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Bruce Pennyworth',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Bridges to College Biotechnology Information Session',
+        		from: '3:00 PM',
+        		to: '6:00 PM',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
+        		checkin: false,
+        		number: '8',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Oswald Cobblepot',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Movie Mondays - Inside Out',
+        		from: '3:30 PM',
+        		to: '10:34 PM',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
+        		checkin: true,
+        		number: '14',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+      {
+        when: 'Thursday, December 3rd 2015',
+        events: [
+        	{
+        		name: 'Community Partners in Health Professions',
+        		from: '8:00 AM',
+        		to: '10:34 PM',
+        		description: 'Daily Schedule 9:00 to 10:30',
+        		checkin: false,
+        		number: '34',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Alfred Martin',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Bridges to College Biotechnology Information Session',
+        		from: '3:00 PM',
+        		to: '6:00 PM',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
+        		checkin: false,
+        		number: '64',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Professor Strange',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Movie Mondays - Inside Out',
+        		from: '3:30 PM',
+        		to: '10:34 PM',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
+        		checkin: false,
+        		number: '1',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+      {
+        when: 'Friday, December 4th 2015',
+        events: [
+        	{
+        		name: 'Community Partners in Health Professions',
+        		from: '8:00 AM',
+        		to: '10:34 PM',
+        		description: 'Daily Schedule 9:00 to 10:30',
+        		checkin: false,
+        		number: '64',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Doctor Who',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Bridges to College Biotechnology Information Session',
+        		from: '3:00 PM',
+        		to: '6:00 PM',
+        		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
+        		checkin: false,
+        		number: '13',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: 'Professor Zoom',
+                website: 'www.google.com'
+        	},
+        	{
+        		name: 'Movie Mondays - Inside Out',
+        		from: '3:30 PM',
+        		to: '10:34 PM',
+        		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
+        		checkin: false,
+        		number: '31',
+                address: 'Union Capital Boston, Boston',
+                points: '100',
+                speaker: '',
+                website: 'www.google.com'
+        	}
+        ]
+      },
+    ];
+	
 	$scope.map = {
       center: {
         latitude: 40.1451,
@@ -76,10 +283,12 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
       zoom: 4,
       bounds: {}
     };
+	
 	$scope.options = {
       scrollwheel: false
     };
-    var createRandomMarker = function(i, bounds, idKey) {
+    
+	var createRandomMarker = function(i, bounds, idKey) {
       var lat_min = bounds.southwest.latitude,
         lat_range = bounds.northeast.latitude - lat_min,
         lng_min = bounds.southwest.longitude,
@@ -97,7 +306,8 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
       ret[idKey] = i;
       return ret;
     };
-    $scope.randomMarkers = [];
+    
+	$scope.randomMarkers = [];
     // Get the bounds from the map once it's loaded
     $scope.$watch(function() {
       return $scope.map.bounds;
@@ -111,4 +321,5 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         $scope.randomMarkers = markers;
       }
     }, true);
+	
 });

@@ -73,11 +73,29 @@
 				controller: 'checkinCtrl',
 				onEnter: function () { console.log("enter checkin.html"); }
 			})
+			.state('eventCheckin', {
+				url: '/eventCheckin',
+				templateUrl: 'views/checkin/eventCheckin.html',
+				controller: 'checkinCtrl',
+				onEnter: function () { console.log("enter eventCheckin.html"); }
+			})
+			.state('eventCheckinConfirmation', {
+				url: '/eventCheckinConfirmation',
+				templateUrl: 'views/checkin/eventCheckinConfirmation.html',
+				controller: 'eventCheckinConfirmationCtrl',
+				onEnter: function () { console.log("enter eventCheckinConfirmation.html"); }
+			})
 			.state('selfiecheckin', {
 				url: '/selfiecheckin',
 				templateUrl: 'views/submitSelfiEvent/submitSelfiEvent.html',
 				controller: 'submitSelfiEventCtrl',
 				onEnter: function () { console.log("enter submitSelfiEventCtrl.html"); }
+			})
+			.state('submitSelfiEventConfirmation', {
+				url: '/submitSelfiEventConfirmation',
+				templateUrl: 'views/submitSelfiEvent/submitSelfiEventConfirmation.html',
+				controller: 'submitSelfiEventCtrl',
+				onEnter: function () { console.log("enter submitSelfiEventConfirmation.html"); }
 			})
 			.state('events', {
 				url: '/events',
@@ -103,18 +121,6 @@
 				controller: 'carpoolCtrl',
 				onEnter: function () { console.log("enter carpool.html"); }
 			})
-			.state('createCarpool', {
-				url: '/createCarpool',
-				templateUrl: 'views/carpool/createCarpool.html',
-				controller: 'carpoolCtrl',
-				onEnter: function () { console.log("enter createCarpool.html"); }
-			})
-			.state('carpoolInfoPage', {
-				url: '/carpoolInfoPage',
-				templateUrl: 'views/carpool/carpoolInfoPage.html',
-				controller: 'carpoolCtrl',
-				onEnter: function () { console.log("enter carpoolInfoPage.html"); }
-			})
 			.state('contactUs', {
 				url: '/contactUs',
 				templateUrl: 'views/contactUs/contactUs.html',
@@ -139,18 +145,6 @@
 				controller: 'messageCtrl',
 				onEnter: function () { console.log("enter message.html"); }
 			})
-            .state('messageContact', {
-                url: '/messageContact',
-                templateUrl: 'views/message/messageContact.html',
-                controller: 'messageCtrl',
-                onEnter: function () { console.log("Message a contact.html"); }
-            })
-            .state('chat', {
-                url: '/chat',
-                templateUrl: 'views/message/chat.html',
-                controller: 'messageCtrl',
-                onEnter: function () { console.log("Chat Window.html"); }
-            })
 			.state('friends', {
 				url: '/friends',
 				templateUrl: 'views/friends/friends.html',
