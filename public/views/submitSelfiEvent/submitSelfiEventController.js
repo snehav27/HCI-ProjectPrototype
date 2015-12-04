@@ -6,12 +6,23 @@
 */
 app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) {
 	$scope.event = {
-    name: 'Reading to kids',
-    description: 'Reading to my kids history of World war 1'
-	
-  };
-  $scope.goToPage = function(page) {
+		name: 'Reading to kids',
+		description: 'Reading to my kids history of World war 1'
+	};
+	$scope.goToPage = function(page) {
 		$location.url(page);
 	};
-  $scope.categories = ['Finance' , 'Health', 'Empowement']
+	$scope.categories = ['Finance' , 'Health', 'Empowement']
+	
+	$scope.getDetails = function(eventName) { 
+		var search = $location.search();
+        var eventName = search.eventName;
+		console.log(eventName);
+		$scope.selfieEvent = eventName;
+	}	
+	
+	$scope.goToSelfieCheckinConfirmation = function(eventName) {
+        $location.url("/submitSelfiEventConfirmation?eventName=" + eventName);
+    }
+
 });
