@@ -1,27 +1,27 @@
-<div layout="column" layout="column" layout-align="center center">
-<div>
-<h3>Check-In at Selfie - Event</h3>
-</div>
-<form name="eventForm">
-	<div layout layout-sm="column">
-      <md-input-container class="md-block">
-        <label>Event Name:</label>
-        <input md-maxlength="50" required name="name" ng-model="event.name">
+<div layout="column" ng-controller="submitSelfiEventCtrl" layout-align="center center" class="inputdemoErrors">
+	<div>
+		<h3>Check-In at Selfie - Event</h3>
 	</div>
+<form name="eventForm">
+	<div layout layout-sm="column" flex>
+		<md-input-container class="md-block">
+			<label>Event Name</label>
+			<input required="" name="eventName" md-maxlength="60" ng-model="event.name">
+		</md-input-container>
 	<div layout layout-sm="column">
       </md-input-container>
 	  <md-input-container class="md-block">
         <label>Description</label>
-        <textarea ng-model="event.description" columns="1" md-maxlength="150" rows="5"></textarea>
+        <textarea required="" md-maxlength="150" ng-model="event.description"  rows="3"></textarea>
       </md-input-container>
  	</div>
-	<div layout layout-sm="column">
-	  <md-button class="md-primary" aria-label="Settings" flex>
-		<span> Add Photo</span>
-		<i class="material-icons">add_a_photo</i>
-      </md-button>
-	  <input id="file-input" type="file" style="display:none;">
-	</div>
+	<div layout layout-sm="column"> 
+			<md-button class="md-button md-raised">
+				<i class="material-icons">add_a_photo</i>
+        		<label for="file-input"> Add Photo</label>  
+      		</md-button>
+      		<input id="file-input" type="file" style="display:none;">
+		</div>
 	<div layout layout-sm="column">
 	  <md-input-container flex>
           <label>Event Category</label>
@@ -35,7 +35,7 @@
 	<div layout layout-sm="column">
 		<md-datepicker ng-model="event.eventdate" md-placeholder="Enter date"></md-datepicker>
     </div>
-	<div layout layout-sm="column">
+	<div layout layout-sm="row">
 		<md-button class="md-button md-warn md-raised" ng-click="goToPage('/home')">
 				BACK
 		</md-button>
@@ -43,4 +43,6 @@
 				CHECK-IN
 		</md-button>
 	</div>
+	</div>
 </form>
+</div>

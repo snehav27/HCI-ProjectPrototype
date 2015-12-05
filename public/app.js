@@ -82,7 +82,7 @@
 			.state('eventCheckinConfirmation', {
 				url: '/eventCheckinConfirmation',
 				templateUrl: 'views/checkin/eventCheckinConfirmation.html',
-				controller: 'eventCheckinConfirmationCtrl',
+				controller: 'checkinCtrl',
 				onEnter: function () { console.log("enter eventCheckinConfirmation.html"); }
 			})
 			.state('selfiecheckin', {

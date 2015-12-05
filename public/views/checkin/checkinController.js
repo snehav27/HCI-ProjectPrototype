@@ -6,7 +6,7 @@
 */
 
 app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
-	
+	$scope.currentDate = new Date();
 	$scope.foundNoUncheckedEvents = function(events) {
 		for (var ev = 0; ev < events.length; ev ++) {
 			event = ""
@@ -33,7 +33,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
     $scope.goToEventCheckin = function(index, parentIndex) {
         $location.url("/eventCheckin?index=" + index + "&parent=" + parentIndex);
     }
-
+	$scope.DateToday = new Date();
     $scope.getDetails = function() {
         var search = $location.search();
         var parentIndex = search.parent;
@@ -49,10 +49,10 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 	$scope.goToConfirmationPage = function(page) {
         $location.url(page);
     }
-	
+
 	$scope.eventData = [
       {
-        when: 'Sunday, November 29th 2015',
+        when: new Date('2015/4/29'),
         events: [
         	{
         		name: '35th Anderson Tree Lighting',
@@ -69,7 +69,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Monday, November 30th 2015',
+        when: new Date ('2015/11/30'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -110,7 +110,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Tuesday, December 1st 2015',
+        when: new Date('2015/12/1'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -151,7 +151,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Wednesday, December 2nd 2015',
+        when: new Date('2015/11/2'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -192,7 +192,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Thursday, December 3rd 2015',
+        when: new Date('2016/1/3'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -233,7 +233,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Friday, December 4th 2015',
+        when: new Date('2015/3/2015'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -277,17 +277,16 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 	
 	$scope.map = {
       center: {
-        latitude: 40.1451,
-        longitude: -99.6680
+        latitude: 42.370781078403844,
+        longitude: -71.06075301055908
       },
-      zoom: 4,
+      zoom: 10,
       bounds: {}
     };
-	
 	$scope.options = {
       scrollwheel: false
     };
-    
+    $scope.map.bounds = new google.maps.LatLngBounds();
 	var createRandomMarker = function(i, bounds, idKey) {
       var lat_min = bounds.southwest.latitude,
         lat_range = bounds.northeast.latitude - lat_min,
