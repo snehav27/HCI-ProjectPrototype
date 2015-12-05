@@ -1,8 +1,13 @@
 
-<div layout="column" layout-align="center center" ng-controller="messageCtrl">
-    <div>
+<div ng-controller="messageCtrl">
+    <div layout="column" layout-align="center center">
         <h3>Messages</h3>
     </div>
+    <div layout="row" layout-align="start center" >
+        <md-button class="md-raised" ng-click="goToPage('/profile')">
+                Back
+        </md-button>        
+    </div>  
     <div layout="column" class="relative" layout-fill role="main">
         <div layout="row" layout-sm="row" layout-align="center center">
             <div>
@@ -34,7 +39,7 @@
                                                     <md-item ng-repeat="item in userData | filter:search">
                                                         <md-item-content>
                                                             <div layout="row" layout-align="space-between center">
-                                                                <div layout="row">
+                                                                <div layout="row" layout-align="center center">
                                                                     <div class="md-tile-left inset">
                                                                         <user-avatar id="member-icon"></user-avatar>
                                                                     </div>
@@ -44,7 +49,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div>
-                                                                    <md-button class="md-raised md-primary" ng-click="goToContact(item.who)" style="width:100px;"> + Message </md-button>
+                                                                    <md-button class="md-raised md-primary" ng-click="goToContact(item.who)" style="width:100px;"> Message </md-button>
                                                                 </div>
                                                             </div>
                                                         </md-item-content>

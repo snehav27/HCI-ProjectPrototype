@@ -175,6 +175,30 @@
 				controller: 'loginCtrl',
 				onEnter: function () { console.log("enter login.html"); }
 			})
+			.state('createCarpool', {
+    			url: '/createCarpool',
+    			templateUrl: 'views/carpool/createCarpool.html',
+    			controller: 'carpoolCtrl',
+    			onEnter: function () { console.log("enter createCarpool.html"); }
+   			})
+   			.state('carpoolInfoPage', {
+				url: '/carpoolInfoPage',
+    			templateUrl: 'views/carpool/carpoolInfoPage.html',
+    			controller: 'carpoolCtrl',
+    			onEnter: function () { console.log("enter carpoolInfoPage.html"); }
+   			})
+   			.state('messageContact', {
+				 url: '/messageContact',
+				 templateUrl: 'views/message/messageContact.html',
+				 controller: 'messageCtrl',
+				 onEnter: function () { console.log("Message a contact.html"); }
+			})
+			.state('chat', {
+				 url: '/chat',
+				 templateUrl: 'views/message/chat.html',
+				 controller: 'messageCtrl',
+				 onEnter: function () { console.log("Chat Window.html"); }
+			})
 			.state('theme', {
 				url: '/theme',
 				templateUrl: 'views/theme/theme.html',

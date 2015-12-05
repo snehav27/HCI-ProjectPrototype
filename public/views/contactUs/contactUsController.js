@@ -29,4 +29,8 @@ app.controller('contactUsCtrl', function ($scope, $rootScope, $location, $mdToas
     );
   };
 
+   $scope.goToPage = function(page) {
+    $location.url(page);
+  }
+  
 });

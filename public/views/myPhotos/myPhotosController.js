@@ -27,4 +27,8 @@ app.controller('myPhotosCtrl', function ($scope, $rootScope, $location) {
           'points'		 : '280'
         }
     ];
+
+  $scope.goToPage = function(page) {
+    $location.url(page);
+  }
 });

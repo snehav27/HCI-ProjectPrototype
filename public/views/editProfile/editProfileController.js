@@ -4,7 +4,7 @@
     Details: edit Profile Controller for application.
     Email  : hci.cs5340@gmail.com
 */
-app.controller('editProfileCtrl', function ($scope) {
+app.controller('editProfileCtrl', function ($scope,$location) {
 	$scope.user = {
 	  email: 'janice.123@ucb.org',
 	  newPassword: '',
@@ -36,5 +36,9 @@ app.controller('editProfileCtrl', function ($scope) {
 			
 			$scope.isChangePasswordSuccess = true;
 		}
+	}
+
+	$scope.goToPage = function(page) {
+		$location.url(page);
 	}
 });

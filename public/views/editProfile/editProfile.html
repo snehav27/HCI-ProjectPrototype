@@ -34,7 +34,10 @@
   		<span style="color: red" ng-show="!isNewPasswordEmpty"> New Password Cannot Be Empty!</span> 
   		<span ng-show="isChangePasswordSuccess"> Password Changed Successfully</span>
     </div>
-    <div>
+    <div layout="row">
+      <md-button class="md-button md-warn md-raised" ng-click="goToPage('/profile')">
+          Cancel
+        </md-button>
     	<md-button class="md-button md-primary md-raised" ng-click="updatePassword()">
         	Update
       	</md-button>

@@ -21,9 +21,12 @@
         <input required="" name="dateTime" ng-model="carpoolCreate.dateTime">
       </md-input-container>
       <div layout="row" layout-align="center center">
-      <md-button class="md-button md-raised" ng-click="submitCarpool()">
-      	Create carpool
+      <md-button class="md-warn md-raised" ng-click="goToPage('/carpool')">
+      	Cancel
   	  </md-button>
+      <md-button class="md-primary md-raised" ng-click="submitCarpool()">
+        Create carpool
+      </md-button>
   	</div>
     </form>
   </md-content>

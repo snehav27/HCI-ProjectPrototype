@@ -1,9 +1,15 @@
-<div ng-controller="themeCtrl" layout ="column" layout-align="center center" layout-margin>
+<div ng-controller="themeCtrl" layout-margin>
 	<div layout layout-align="center center" layout-margin>
-      	<h2 class="md-title">
+      	<h3 class="md-title">
         	Select a theme :
-        </h2>
+        </h3>
     </div>
+    <div layout layout-align="start center" >
+        <md-button class="md-button md-raised" ng-click="goToPage('/home')">
+            Back
+        </md-button>
+    </div>
+    <div layout ="column" layout-align="center center" >   
     <div layout-margin>
     	<md-button id="pink" style=" background-color: dark-pink;" class="md-fab md-mini" aria-label="pink" ng-click="changeTheme($event)">
         </md-button>
@@ -18,10 +24,9 @@
          <md-button id="grey"  style=" background-color: grey;" class="md-fab md-mini" aria-label="grey" ng-click="changeTheme($event)">
         </md-button>
     </div>
-    <div class="thing" ng-show="!theme" layout-margin>
-      <h3> Current theme is Indigo. <h3>
     </div>
-    <div class="thing" ng-show="theme" layout-margin>
-      <h3>Current theme is {{theme}}.<h3>
+    <div layout layout-align="center center" class="md-subhead" layout-margin>
+      <p ng-show="!theme"> Current theme is Indigo. </p>
+      <p ng-show="theme">Current theme is {{theme}}.<p>
     </div>
 </div>

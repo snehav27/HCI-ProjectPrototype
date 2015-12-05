@@ -1,23 +1,32 @@
 
-  <div layout="column" layout-align="center center" ng-controller="ucbMembersCtrl">
+  <div  ng-controller="friendsCtrl">
 
-    <div>
-    	 <h3>Friends</h3>
+    <div  layout="row" layout-align="center center">
+    	 <h3>Friend's/Friend's Request</h3>
+    </div>
+    <div layout="row" layout-align="start center" >
+        <md-button class="md-raised" ng-click="goToPage('/profile')">
+                Back
+        </md-button>        
     </div>	
     <div layout="column" class="relative" layout-fill role="main">
-        <div layout="row" layout-sm="row"  layout-align="center center">
-    <div>
-      <md-input-container style="line-height:15px;width:250px;" flex>
-        <label>Search A Friend</label>
-          <input ng-model="search.who">
-      </md-input-container>
-    </div>
-    <div>
-	 <i class="material-icons" flex>search</i>
-    </div>
-	</div>
-      <md-content flex md-scroll-y>
-        <ui-view layout="column" layout-fill>
+      <div layout="row" layout-sm="row"  layout-align="center center">
+          <div>
+              <md-input-container style="line-height:15px;width:250px;" flex>
+                  <label>Search A Friend/Request</label>
+                  <input ng-model="search.who">
+              </md-input-container>
+          </div>
+          <div>
+	           <i class="material-icons" flex>search</i>
+          </div>    
+	   </div>
+     <div class="tabsdemoDynamicHeight">     
+    <md-content flex md-scroll-y>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Friends">
+        <md-content class="md-padding">
+          <ui-view layout="column" layout-fill>
           <div class="inset" hide-sm></div>
               <div layout="row" layout-align="center center">
                   <md-card flex-sm="90" flex-gt-sm="90">
@@ -26,7 +35,7 @@
                         <md-item ng-repeat="item in friendsData | filter:search">
                           <md-item-content>
                           <div layout="row" layout-align="space-between center">
-                          	<div layout="row">
+                            <div layout="row">
                             <div class="md-tile-left inset">
                                 <user-avatar id="member-icon"></user-avatar>
                             </div>
@@ -47,8 +56,52 @@
                     </md-card-content>
                   </md-card>
               </div>
+        </ui-view>
+        </md-content>
+      </md-tab>
+      <md-tab label="Friends Request">
+        <md-content flex md-scroll-y>
+        <ui-view layout="column" layout-fill>
+          <div class="inset" hide-sm></div>
+              <div layout="row" layout-align="center center">
+                  <md-card flex-sm="90" flex-gt-sm="90">
+                    <md-card-content>
+                      <md-list>
+                        <md-item ng-repeat="item in friendRequestData | filter:search">
+                          <md-item-content>
+                          <div layout="row" layout-align="space-between center" >
+                            <div layout="row">
+                            <div class="md-tile-left inset">
+                                <user-avatar id="member-icon"></user-avatar>
+                            </div>
+                            <div layout="column" layout-align="center center" class="md-tile-content">
+                              <div class="md-body-2">{{item.who}}</div>
+                    
+                            </div>
+                            </div>
+                            <div layout="row" layout-align="space-between center" layout-margin>                              
+                              <div>
+                              <i class="material-icons md-30 green" ng-click="acceptRequest($index);showSimpleToast();">done</i>
+                              </div>
+                              <div>
+                             <i  class="material-icons md-30 red" ng-click="declineRequest($index)">delete</i>
+                            </div>
+                           </div>
+                           </div>  
+                          </md-item-content>
+                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        </md-item>
+                        <md-divider></md-divider>
+                      </md-list>
+                    </md-card-content>
+                  </md-card>
+              </div>
    
         </ui-view>
       </md-content>
-    </div>
+      </md-tab>      
+  </md-content>
+  </div>
+  </div>
 </div>

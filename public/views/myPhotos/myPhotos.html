@@ -1,7 +1,12 @@
-<div layout="column" layout="column" layout-align="center center">
 <div>
-<h3>My Photos</h3>
+<div layout="column" layout-align="center center">
+    <h3>My Photos</h3>
 </div>
+<div layout="row" layout-align="start center" >
+        <md-button class="md-raised" ng-click="goToPage('/profile')">
+                Back
+        </md-button>        
+    </div>      
 <div class="whiteframedemoBasicUsage" layout="column" layout-fill style="padding-bottom: 32px;">
   <md-whiteframe class="md-whiteframe-z1" layout="row" layout-align="space-around center">
     <span> <user-avatar></user-avatar></span>
