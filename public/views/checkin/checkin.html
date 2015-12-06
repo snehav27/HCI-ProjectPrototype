@@ -15,6 +15,7 @@
 			<md-tabs md-dynamic-height md-border-bottom>
 				<md-tab label="Current Events">
 					<md-content class="md-padding">
+						<form name="currentEventForm">
 						<ui-view layout="column" layout-fill>
 						<div class="inset" hide-sm></div>
 						<div layout="row" layout-align="center center">
@@ -78,11 +79,13 @@
 					</md-list>
 				</div>
 			</ui-view>
+			</form>
 			</md-content>
 			</md-tab>
 			<md-tab label="Past Events">
 				<md-content class="md-padding">
 				<ui-view layout="column" layout-fill>
+				<form name="pastEventForm">
 				<div class="inset" hide-sm></div>
 				<div layout="row" layout-align="center center">
 					<div>
@@ -146,6 +149,7 @@
 					</md-list>
 				</div>
 			</ui-view>
+			</form>
 			</md-content>
 			</md-tab>
     </md-tabs>

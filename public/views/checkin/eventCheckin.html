@@ -1,3 +1,9 @@
+<div id="map_canvas">
+	<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+		<ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" clickable='true'>
+		</ui-gmap-markers>
+	</ui-gmap-google-map>
+</div>
 <h3>Check-in at event</h3>
 <div ng-controller="checkinCtrl" layout="column" ng-init="getDetails()">
 <md-card flex-sm="90" flex-gt-sm="90">
@@ -32,14 +38,13 @@
 					<b>Select Hours for which you attended event : </b> 
 			</div>
 			<div layout-padding="">
-			<!--	<input flex type="number" ng-model="event.hours" aria-label=""
-					min="1" max="8"	aria-controls="hour-slider">
-			-->
+			<input flex type="number" ng-model="event.hours" aria-label=""
+					min="1" max="8"	aria-controls="hour-slider" required="">
 			</div>
-		</div> 
-			<div layout-padding="">
-				<md-slider flex class="md-primary" md-discrete ng-model="event.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider"> </md-slider>
-			</div>
+		</div>
+		<div layout-padding="">
+			<md-slider flex class="md-primary" md-discrete ng-model="event.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider" required=""> </md-slider>
+		</div>
 	</md-input-container>
 	<div layout="row" layout-sm layout-align="center center"> 
 		<md-input-container class="md-block">
@@ -47,7 +52,7 @@
 			BACK
 			</md-button>
 		</md-input-container>
-		<md-input-container class="md-block">
+		<md-input-container class="md-block" ng-disabled="userForm.$invalid">
 			<md-button class="md-button md-primary md-raised" ng-click="checkinAtevent()">
 			CHECK-IN 
 			</md-button>
