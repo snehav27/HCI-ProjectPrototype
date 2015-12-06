@@ -15,7 +15,6 @@ app.controller('contactUsCtrl', function ($scope, $rootScope, $location, $mdToas
 		showToastMessage('Thanks for Contacting Us .. We will get back to you soon');
 		
 	} else {
-
 		$scope.isQueryEmpty =true;
     }
    }

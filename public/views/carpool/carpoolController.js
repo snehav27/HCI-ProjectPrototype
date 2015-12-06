@@ -6,7 +6,7 @@
 */
 app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) {
 
-
+  $scope.isCommentEmpty =false;
   $scope.carpoolData = [
       {
       	eventName:'Woman Empowerment 2',
@@ -107,6 +107,17 @@ app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) 
       $scope.carpoolDetailInfo = $scope.carpoolData[index];
     }
 
+    $scope.comment = function(query) {            
+      $scope.isCommentEmpty =false;
+      console.log(query);
+      if(query != null) {                  
+          showToastMessage('Commented Successfully');
+       } else {
+          $scope.isCommentEmpty =true;      
+      }
+
+    }  
+  
     function showToastMessage(message) {
     $mdToast.show(
       $mdToast.simple()

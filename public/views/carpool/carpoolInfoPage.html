@@ -43,8 +43,11 @@
     					<label>Comment On The Post</label>
     					<textarea ng-model="query" columns="1" md-maxlength="50" rows="2" ></textarea>
 					</md-input-container>
-					<md-button class="md-raised md-primary"> Comment </md-button>
+					<md-button class="md-raised md-primary" ng-click="comment(query)"> Comment </md-button>                    
                 </div>
+                <div  layout="column" layout-align="center center"  class="md-caption"  ng-show='isCommentEmpty' style="color:red;">
+                        Comment cannot be empty
+                </div> 
                 <div layout="row" layout-align="center center">
                     <md-card flex-sm="90" flex-gt-sm="90">
                         <md-card-content>
@@ -73,23 +76,3 @@
         </md-content>
     </div>
 </div>
-
-<!-- {
-      	eventName:'Woman Empowerment 2',
-        from: 'Northeastern',
-        to: 'Roxbury tobin center',
-        startDate: 'Dec 23 2015',
-        startTime: '11:30 am' ,
-        by: 'Alex Corner',
-        comments: [   
-                                {  by : "John",  
-                                  comment  : "I am In",
-                                  date       : 'Aug/23/2015'
-                                   },
-
-                                { by : "Alex",  
-                                  comment  : "Awesome message me your number",
-                                  date       : 23 
-                                }
-                              ]
-      } -->
