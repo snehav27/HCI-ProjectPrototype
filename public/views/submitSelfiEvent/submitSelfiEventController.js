@@ -10,7 +10,7 @@ app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) 
 		description: 'Reading to my kids history of World war 1',
 		category: 'Education (Child / Adult)',
 		date: new Date ('2015/11/30'),
-		hours: '2'
+		hours: 2
 
 	};
 	$scope.goToPage = function(page) {
