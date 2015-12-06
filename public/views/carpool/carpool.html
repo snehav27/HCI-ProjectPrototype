@@ -38,7 +38,6 @@
                             	<p class="md-caption">
                             		<b>From : </b>{{post.from}}
                             	</p>	
-
                             	<p class="md-caption">
                             		<b>To : </b> {{post.to}}
                             	</p>
@@ -46,7 +45,9 @@
                             	<p class="md-caption">
                             		<b>Start Date/Time : </b> {{post.startDate}} {{post.startTime}}                                
                                </p> 
-                               <md-button class="md-raised md-primary" ng-click="gotoCarpoolInfo($index)"> Select </md-button>                              
+                               <p layout ="column" layout-align="center center">
+                               <md-button class="md-raised md-primary" ng-click="gotoCarpoolInfo($index)"> Select </md-button>
+                               </p>                              
                             </div>
                            </div>  
                           </md-item-content>

@@ -18,12 +18,12 @@ app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) 
         comments: [   
                                 {  by : "John",  
                                   comment  : "I am In",
-                                  date       : 'Aug/23/2015'
+                                  date       : 'Nov/23/2015'
                                    },
 
                                 { by : "Alex",  
                                   comment  : "Awesome message me your number",
-                                  date       : 23 
+                                  date       : 'Nov/23/2015'
                                 }
                               ]
       },
@@ -42,11 +42,11 @@ app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) 
 
                                 { by : "Bruno",  
                                   comment  : "Sure",
-                                  date       : 23 
+                                  date       : 'Nov/23/2015' 
                                 } ,
                                 { by : "Doe",  
                                   comment  : "Great see you then, Check your Inbox",
-                                  date       : 23 
+                                  date       : 'Nov/23/2015'
                                 }
                               ]
       },
@@ -104,17 +104,28 @@ app.controller('carpoolCtrl', function ($scope, $rootScope, $location,$mdToast) 
     $scope.getCarpoolInfoDetails = function(index) {
        var search = $location.search();        
         var index = search.index;
+       $scope.index =index; 
       $scope.carpoolDetailInfo = $scope.carpoolData[index];
     }
 
     $scope.comment = function(query) {            
       $scope.isCommentEmpty =false;
       console.log(query);
-      if(query != null) {                  
-          showToastMessage('Commented Successfully');
+      if(query == null || query == '' || query === "undefined") {  
+
+          $scope.isCommentEmpty =true;
+
        } else {
-          $scope.isCommentEmpty =true;      
+        showToastMessage('Commented Successfully');
+          var newItem =  { by : "Janice",  
+                           comment  : query,
+                           date       : 'Dec/8/2015'}; 
+          console.log($scope.carpoolData[$scope.index]);
+          $scope.carpoolData[$scope.index].comments.push(newItem); 
+                         
       }
+
+
 
     }  
   
