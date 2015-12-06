@@ -12,7 +12,7 @@ app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) 
 	$scope.goToPage = function(page) {
 		$location.url(page);
 	};
-	$scope.categories = ['Finance' , 'Health', 'Empowement']
+	$scope.categories = ['Health (Physical & Mental)' , 'Community Service', 'Education (Child / Adult)', 'Finance / Employment']
 	
 	$scope.getDetails = function(eventName) { 
 		var search = $location.search();

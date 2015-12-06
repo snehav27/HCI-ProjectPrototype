@@ -52,7 +52,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 
 	$scope.eventData = [
       {
-        when: new Date('2015/4/29'),
+        when: new Date('2015/12/29'),
         events: [
         	{
         		name: '35th Anderson Tree Lighting',
@@ -295,8 +295,8 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
       if (idKey == null) {
         idKey = "id";
       }
-      var latitude = lat_min + (Math.random() * lat_range);
-      var longitude = lng_min + (Math.random() * lng_range);
+      var latitude = 42.370781078403844 + Math.random()*0.002;
+      var longitude = -71.06075301055908 + Math.random()*0.002;
       var ret = {
         latitude: latitude,
         longitude: longitude,

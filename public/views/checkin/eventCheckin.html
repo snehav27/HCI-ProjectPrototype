@@ -1,65 +1,59 @@
-<div layout="column" layout-align="space-between center" ng-controller="checkinCtrl" ng-init="getDetails()">
+<h3>Check-in at event</h3>
+<div ng-controller="checkinCtrl" layout="column" ng-init="getDetails()">
+<md-card flex-sm="90" flex-gt-sm="90">
+	<md-card-content layout-padding="">
     <form name="userForm">
-	<div>
-        <h3>Event Name : {{eventInfo.name}}</h3>
-        </br>
-    </div>
-    <div layout="column" class="relative" layout-fill role="main">
-        <md-content flex md-scroll-y>
-            <ui-view layout="column" layout-fill>
-                <div class="inset" hide-sm></div>
-                <div layout="row" layout-align="center center">
-                    <md-card flex-sm="90" flex-gt-sm="90">
-                        <md-card-content>
-                            <div layout="column" layout-align="space-between left">
-                                <p class="md-caption">
-                                    <b>Description :</b> {{eventInfo.description}}
-                                </p>
-                                <p class="md-caption">
-                                    <b>Date :</b> {{date}}
-                                </p>
-                                <p class="md-caption">
-                                    <b>Timings :</b> {{eventInfo.from}} to {{eventInfo.to}}
-                                </p>
-                                <p class="md-caption">
-                                    <b>Address :</b> {{eventInfo.address}}
-                                </p>
-								<p class="md-caption" layout="row" layout-align="space-between center">
-                                    <span class="md-caption"><b>Speaker :</b> {{eventInfo.speaker}}</span>
-                                    <a href="eventInfo.website"><i class="material-icons">link</i></a>
-                                </p>
-                                <p class="md-caption">
-                                    <b>Points :</b> {{eventInfo.points}}
-                                </p>
-                                <p class="md-caption">
-                                    <md-button class="md-button md-raised">
-										<label class="md-caption" for="file-input">Add Photo</label> 
-										<i class="material-icons" flex>add_a_photo</i>						
-									</md-button>
-                                </p>
-                            </div>
-							<div layout layout-sm="row">
-								<div layout="row" layout-align="space-between center">
-									<span class="md-caption">Select Hours for which you attended events: </span>
-								</div>
-							</div>
-							<div layout>
-								<md-slider flex class="md-primary" md-discrete ng-model="hours" step="1" min="1" max="10" aria-label="rating"> </md-slider>
-							</div>							
-                        </md-card-content>
-                    </md-card>
-                </div>
-                <div layout="row" layout-align="center center">
-                    <md-button class="md-button md-warn md-raised" ng-click="goToPage('/checkin')">
-                        BACK
-                    </md-button>
-					<md-button class="md-button md-primary md-raised" ng-click="checkinAtevent()">
-						CHECK-IN 
-					</md-button>
-				</div>
+	<md-input-container class="md-block">
+		<div layout="row">
+		<b>Event Name : </b>
+		</div>
+		<div layout="row">
+			{{eventInfo.name}}
+		</div>
+    </md-input-container>
+	<md-input-container class="md-block">
+		<div layout="row">
+		<b>Event Description : </b>
+		</div>
+		<div layout="row">
+		{{eventInfo.description}}
+		</div>
+	</md-input-container>
+	<div layout="row" layout-sm layout-align="center center"> 
+		<md-button class="md-button md-raised">
+       		<label for="file-input">Add Photo</label>  
+			<i class="material-icons">add_a_photo</i>			
+		</md-button>
+    	<input id="file-input" type="file" style="display:none;">
+	</div>
+	<md-input-container class="md-block">
+		<div layout="row" >
+			<div layout-padding="">
+					<b>Select Hours for which you attended event : </b> 
 			</div>
-            </ui-view>
-        </md-content>
-    </div>
+			<div layout-padding="">
+			<!--	<input flex type="number" ng-model="event.hours" aria-label=""
+					min="1" max="8"	aria-controls="hour-slider">
+			-->
+			</div>
+		</div> 
+			<div layout-padding="">
+				<md-slider flex class="md-primary" md-discrete ng-model="event.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider"> </md-slider>
+			</div>
+	</md-input-container>
+	<div layout="row" layout-sm layout-align="center center"> 
+		<md-input-container class="md-block">
+			<md-button class="md-button md-warn md-raised" ng-click="goToPage('/checkin')">
+			BACK
+			</md-button>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<md-button class="md-button md-primary md-raised" ng-click="checkinAtevent()">
+			CHECK-IN 
+			</md-button>
+		</md-input-container>
+	</div>
 	</form>
+	</md-card-content>
+	</md-card>
 </div>
