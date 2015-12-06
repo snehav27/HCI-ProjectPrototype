@@ -20,10 +20,14 @@
                 <i class="material-icons" flex>search</i>
             </div>
         </div>
-        <div class="tabsdemoDynamicHeight">
+        <div >
         <md-content>
-            <md-tabs md-dynamic-height md-border-bottom >
-                <md-tab label="Message a Contact"> 
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab >
+                <md-tab-label layout="row" layout-align="center center">
+                    <p style="color:{{theme}}">Message a Contact </p>
+                </md-tab-label>
+                <md-tab-body>
                     <md-content class="md-padding">
                         <div>
                             <md-content flex md-scroll-y>
@@ -66,10 +70,14 @@
                             </md-content>
                         </div>
                     </md-content>
+                </md-tab-body>
                 </md-tab>
-                <md-tab label="Chats">
-                    <md-content class="md-padding" layout-align="center">
-                        
+                <md-tab>
+                 <md-tab-label >
+                    <p style="color:{{theme}}">Chats</p>
+                </md-tab-label>
+                    <md-tab-body>
+                    <md-content class="md-padding" layout-align="center">                        
                         <div>
                         <md-content flex md-scroll-y>
                             <ui-view layout="column" layout-fill>                                
@@ -111,6 +119,7 @@
                         </md-content>
     </div>
     </md-content>
+    </md-tab-body>
     </md-tab>
     </md-tabs>
     </md-content>

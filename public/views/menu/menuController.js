@@ -1,6 +1,7 @@
-app.controller('menuCtrl', function ($scope, $location, $timeout, $mdSidenav, $log) {
-    $scope.toggleLeft = buildDelayedToggler('left');
+app.controller('menuCtrl', function ($scope, $location, $timeout, $mdSidenav, $log, $rootScope) {
     
+    $scope.toggleLeft = buildDelayedToggler('left');    
+    $rootScope.theme ="indigo";
 
      $scope.isloginLocation = function() {
      var currentPath = $location.path();
