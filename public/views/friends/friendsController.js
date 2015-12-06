@@ -5,6 +5,8 @@
     Email  : hci.cs5340@gmail.com
 */
 app.controller('friendsCtrl', function ($scope, $rootScope, $location,$mdToast) {
+
+  $scope.heading1 = '&nbsp;&nbsp;&nbsp;Friends';
   $scope.friendsData = [
       {
         who: 'Alex Corry',

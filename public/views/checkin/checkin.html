@@ -10,10 +10,14 @@
         <h3>Check-In at UCB events</h3>
     </div>
 	<div layout="column" class="relative" layout-fill role="main" flex="50">
-	<div ng-cloak layout-align="space-between center center" class="tabsdemoDynamicHeight">
+	<div ng-cloak layout-align="space-between center center">
 		<md-content>
-			<md-tabs md-dynamic-height md-border-bottom>
-				<md-tab label="Current Events">
+			<md-tabs md-dynamic-height md-border-bottom>	
+				<md-tab>			
+				<md-tab-label layout="row" layout-align="center center">
+                    <p style="color:{{theme}}">Current Events </p>
+                </md-tab-label>
+                <md-tab-body>
 					<md-content class="md-padding">
 						<form name="currentEventForm">
 						<ui-view layout="column" layout-fill>
@@ -81,8 +85,13 @@
 			</ui-view>
 			</form>
 			</md-content>
+			</md-tab-body>
 			</md-tab>
-			<md-tab label="Past Events">
+			<md-tab>
+			<md-tab-label layout="row" layout-align="center center">
+                    <p style="color:{{theme}}"> Past Events </p>
+                </md-tab-label>
+                <md-tab-body>
 				<md-content class="md-padding">
 				<ui-view layout="column" layout-fill>
 				<form name="pastEventForm">
@@ -151,6 +160,7 @@
 			</ui-view>
 			</form>
 			</md-content>
+		</md-tab-body>
 			</md-tab>
     </md-tabs>
   </md-content>
