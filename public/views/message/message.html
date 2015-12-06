@@ -23,7 +23,8 @@
         <div class="tabsdemoDynamicHeight">
         <md-content>
             <md-tabs md-dynamic-height md-border-bottom >
-                <md-tab label="Message a Contact"> 
+            <md-tabs-wrapper>
+                <md-tab label="Message a Contact" style="color:{{theme}};"> 
                     <md-content class="md-padding">
                         <div>
                             <md-content flex md-scroll-y>
@@ -31,7 +32,6 @@
                                     <div layout="row" layout-align="center center" class="md-subhead">Message a Contact</div>
                                     <div class="inset" hide-sm></div>
                                     <div layout="row" layout-align="center center">
-
                                         <md-card flex-sm="90" flex-gt-sm="90">
                                             <md-card-content>
 
@@ -45,7 +45,6 @@
                                                                     </div>
                                                                     <div layout="column" class="md-body-2">
                                                                         <h4>{{item.who}}</h4>
-
                                                                     </div>
                                                                 </div>
                                                                 <div>

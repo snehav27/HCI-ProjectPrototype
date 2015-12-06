@@ -89,8 +89,8 @@ md-toolbar:not(.md-hue-1),
 }
 
 .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
-      background: #3F51B5;
-      color:black; 
+     /* background: #3F51B5;
+      color:black; */
 }
 .tabsdemoDynamicHeight md-content h1:first-child {
     margin-top: 0; 

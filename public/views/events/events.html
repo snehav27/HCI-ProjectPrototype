@@ -8,7 +8,7 @@
 			<div>
 				<md-input-container style="line-height:15px;width:250px;" flex>
 					<label>Search Events</label>
-					<input ng-model="search.events.name">
+					<input ng-model="search.event.name">
 				</md-input-container>
 			</div>
 			<div>
@@ -50,16 +50,12 @@
 															    <b>To :</b> {{ ::event.to}}
 															</p>
 														</div>
-														<div layout="row">
-															<p class="md-caption">
-															    <md-button md-no-ink class="md-primary" ng-click="goToEvent($index, parentIndex)">
+														<div layout="row">														
+															<md-button md-no-ink class="md-primary" ng-click="goToEvent($index, parentIndex)">
 															    	More Info
-															    </md-button>
-															</p>
-														</div>
-														<div layout="row">
-															<md-button class="md-raised md-warn" ng-if="isAttending(event.rsvp)" ng-click="removeRsvp($index, parentIndex)"><span class="md-caption">REMOVE RSVP</span></md-button>
-															<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click="addRsvp($index, parentIndex)"><span class="md-caption">RSVP</span></md-button>
+															</md-button>														
+															<md-button class="md-raised md-warn" ng-if="isAttending(event.rsvp)" ng-click="removeRsvp($index, parentIndex)">REMOVE RSVP</md-button>
+															<md-button class="md-raised md-primary" ng-if="isNotAttending(event.rsvp)" ng-click="addRsvp($index, parentIndex)">RSVP</md-button>
 														</div>
 													</div>
 								            	</v-pane-content>
