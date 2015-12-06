@@ -7,6 +7,9 @@
 
 app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 	$scope.currentDate = new Date();
+	$scope.event = {
+		hours: 2
+	};
 	$scope.foundNoUncheckedEvents = function(events) {
 		for (var ev = 0; ev < events.length; ev ++) {
 			event = ""
@@ -17,19 +20,21 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 		}
 		return true;
 	}
-	
     $scope.checkinAtevent = function() {
 		var search = $location.search();
         var parentIndex = search.parent;
         var childIndex = search.index;
         $scope.eventData[parentIndex].events[childIndex].checkin = true;
-		$scope.goToEventCheckinConfirmation(childIndex, parentIndex);
+		
+		if(	$scope.event.hours != null && 
+			($scope.event.hours >= 1) && 
+			($scope.event.hours <= 8)) {
+				$scope.goToEventCheckinConfirmation(childIndex, parentIndex);
+		}
     }
-
 	$scope.goToEventCheckinConfirmation = function(index, parentIndex) {
         $location.url("/eventCheckinConfirmation?index=" + index + "&parent=" + parentIndex);
     }
-	
     $scope.goToEventCheckin = function(index, parentIndex) {
         $location.url("/eventCheckin?index=" + index + "&parent=" + parentIndex);
     }
@@ -41,25 +46,22 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         $scope.date = $scope.eventData[parentIndex].when;
         $scope.eventInfo = $scope.eventData[parentIndex].events[childIndex];
     }
-
     $scope.goToPage = function(page) {
         $location.url(page);
     }
-	
 	$scope.goToConfirmationPage = function(page) {
         $location.url(page);
     }
-
 	$scope.eventData = [
       {
-        when: new Date('2015/12/29'),
+        when: new Date('2015/12/8'),
         events: [
         	{
         		name: '35th Anderson Tree Lighting',
         		from: '1:00 PM',
         		to: '10:34 PM',
         		description: 'Come enjoy Boston\'s Biggest & Best Neighborhood Tree Lighting!',
-        		checkin: true,
+        		checkin: false,
         		number: '5',
                 address: 'Union Capital Boston, Boston',
                 points: '100',
