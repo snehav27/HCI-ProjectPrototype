@@ -7,29 +7,13 @@
                 Back
         </md-button>        
     </div>      
-<div class="whiteframedemoBasicUsage" layout="column" layout-fill style="padding-bottom: 32px;">
+<div class="whiteframedemoBasicUsage" layout="column" layout-fill style="padding-bottom: 32px;" ng-repeat="photoInfo in myPhotoData">
   <md-whiteframe class="md-whiteframe-z1" layout="row" layout-align="space-around center">
     <span> <user-avatar></user-avatar></span>
     <span layout="column">
-     <span class="md-subhead">Event Name 1</span>
-     <span class="md-body-1">Points: 100</span>
-     <span class="md-body-2">Date: 11/12/15</span>
-   </span>
-  </md-whiteframe>
-  <md-whiteframe class="md-whiteframe-z2" layout="row" layout-align="space-around center">
-    <span> <user-avatar></user-avatar></span>
-    <span layout="column">
-      <span class="md-subhead">Event Name 2</span>
-     <span class="md-body-1">Points: 200</span>
-     <span class="md-body-2">Date: 11/12/14</span>
-   </span>
-  </md-whiteframe>
-  <md-whiteframe class="md-whiteframe-z2" layout="row" layout-align="space-around center">
-    <span> <user-avatar></user-avatar></span>
-    <span layout="column">
-      <span class="md-subhead">Event Name 3</span>
-     <span class="md-body-1">Points: 150</span>
-     <span class="md-body-2">Date: 21/09/14</span>
+     <span class="md-subhead">{{photoInfo.name}}</span>
+     <span class="md-body-1">Points: {{photoInfo.points}}</span>
+     <span class="md-body-2">Date: {{photoInfo.date}}</span>
    </span>
   </md-whiteframe>
 </div>
