@@ -4,15 +4,15 @@
     <form name="selfieEventForm">
 		<md-input-container class="md-block">
 			<label>Selfie Event Name</label>
-			<input required="" name="eventName" md-maxlength="100" ng-model="event.name">
+			<input required="" name="eventName" md-maxlength="100" ng-model="selfieEvent.name">
 		</md-input-container>
 		<md-input-container class="md-block">
 			<label>Selfie Event Description</label>
-			<textarea required="" name="eventDescription" md-maxlength="350" ng-model="event.description"  rows="3"></textarea>
+			<textarea required="" name="eventDescription" md-maxlength="350" ng-model="selfieEvent.description"  rows="3"></textarea>
 		</md-input-container>
 		<md-input-container class="md-block">
 			<label>Select category</label>
-				<md-select ng-model="category">
+				<md-select ng-model="category" ng-model="selfieEvent.category" required="">
 					<md-option ng-repeat="category in categories" value="{{category}}">
 						{{category}}
 					</md-option>
@@ -20,7 +20,7 @@
 		</md-input-container>
 		<md-input-container class="md-block">
 			<div layout-sm>Select Date</div>
-			<input type="date" ng-model="event.date"> 
+			<input type="date" ng-model="selfieEvent.date" required=""> 
 		</md-input-container>
 		<div layout="row" layout-sm layout-align="center center"> 
 			<md-button class="md-button md-raised">
@@ -41,7 +41,7 @@
 				</div>
 			</div> 
 			<div layout-padding="">
-				<md-slider flex class="md-primary" md-discrete ng-model="event.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider"> </md-slider>
+				<md-slider flex class="md-primary" md-discrete ng-model="selfieEvent.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider"> </md-slider>
 			</div>
 		</md-input-container>
 		<div layout="row" layout-sm layout-align="center center"> 
@@ -51,7 +51,7 @@
 				</md-button>
 			</md-input-container>
 			<md-input-container class="md-block">
-				<md-button class="md-button md-primary md-raised" ng-click="goToSelfieCheckinConfirmation(event.name)">
+				<md-button class="md-button md-primary md-raised" ng-disabled="selfieEventForm.$invalid" ng-click="goToSelfieCheckinConfirmation(selfieEvent.name)">
 				CHECK-IN
 				</md-button>
 			</md-input-container>

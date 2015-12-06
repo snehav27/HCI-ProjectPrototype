@@ -5,9 +5,13 @@
     Email  : hci.cs5340@gmail.com
 */
 app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) {
-	$scope.event = {
+	$scope.selfieEvent = {
 		name: 'Reading to kids',
-		description: 'Reading to my kids history of World war 1'
+		description: 'Reading to my kids history of World war 1',
+		category: 'Education (Child / Adult)',
+		date: new Date ('2015/11/30'),
+		hours: '2'
+
 	};
 	$scope.goToPage = function(page) {
 		$location.url(page);
@@ -22,7 +26,10 @@ app.controller('submitSelfiEventCtrl', function ($scope, $rootScope, $location) 
 	}	
 	
 	$scope.goToSelfieCheckinConfirmation = function(eventName) {
-        $location.url("/submitSelfiEventConfirmation?eventName=" + eventName);
+		if($scope.selfieEvent.name != null && $scope.selfieEvent.description != null && $scope.selfieEvent.category != null && $scope.selfieEvent.date != null) {
+	        
+	      	$location.url("/submitSelfiEventConfirmation?eventName=" + eventName);
+	      }
     }
 
 });

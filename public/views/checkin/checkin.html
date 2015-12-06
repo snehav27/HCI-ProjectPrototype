@@ -50,9 +50,6 @@
 								                	<p class="md-body-2"> 
 											    		{{ ::event.name }}
 								                    </p>
-												<div layout="row">
-													<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)"><span class="md-caption">Check-In</span></md-button>
-												</div>
 								                </v-pane-header>
 								                <v-pane-content>
 								                	<div layout="column" layout-align="space-between center">
@@ -68,11 +65,7 @@
 															</p>
 														</div>
 														<div layout="row">
-															<p class="md-caption">
-															    <md-button md-no-ink class="md-primary" ng-click="goToEventCheckin($index, parentIndex)">
-															    	More Info
-															    </md-button>
-															</p>
+															<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)"><span class="md-caption">Check-In</span></md-button>
 														</div>
 													</div>
 								            	</v-pane-content>
@@ -124,11 +117,6 @@
 								                	<p class="md-body-2"> 
 											    		{{ ::event.name }}
 								                    </p>
-													<div layout="row">
-													<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)">
-														<span class="md-caption">Check-In</span>
-													</md-button>
-													</div>
 								                </v-pane-header>
 								                <v-pane-content>
 								                	<div layout="column" layout-align="space-between center">
@@ -144,11 +132,9 @@
 															</p>
 														</div>
 														<div layout="row">
-															<p class="md-caption">
-															    <md-button md-no-ink class="md-primary" ng-click="goToEventCheckin($index, parentIndex)">
-															    	More Info
-															    </md-button>
-															</p>
+															<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)">
+																<span class="md-caption">Check-In</span>
+															</md-button>
 														</div>
 													</div>
 								            	</v-pane-content>
