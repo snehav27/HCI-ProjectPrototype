@@ -1,48 +1,61 @@
-<div layout="column" ng-controller="submitSelfiEventCtrl" layout-align="center center" class="inputdemoErrors">
-	<div>
-		<h3>Check-In at Selfie - Event</h3>
-	</div>
-<form name="eventForm">
-	<div layout layout-sm="column" flex>
+<h3>Submit Selfie Event</h3>
+<div ng-controller="submitSelfiEventCtrl" layout="column" class="inputdemoErrors">
+<md-content layout-padding="">
+    <form name="selfieEventForm">
 		<md-input-container class="md-block">
-			<label>Event Name</label>
-			<input required="" name="eventName" md-maxlength="60" ng-model="event.name">
+			<label>Selfie Event Name</label>
+			<input required="" name="eventName" md-maxlength="100" ng-model="event.name">
 		</md-input-container>
-	<div layout layout-sm="column">
-      </md-input-container>
-	  <md-input-container class="md-block">
-        <label>Description</label>
-        <textarea required="" md-maxlength="150" ng-model="event.description"  rows="3"></textarea>
-      </md-input-container>
- 	</div>
-	<div layout layout-sm="column"> 
+		<md-input-container class="md-block">
+			<label>Selfie Event Description</label>
+			<textarea required="" name="eventDescription" md-maxlength="350" ng-model="event.description"  rows="3"></textarea>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<label>Select category</label>
+				<md-select ng-model="category">
+					<md-option ng-repeat="category in categories" value="{{category}}">
+						{{category}}
+					</md-option>
+				</md-select>
+		</md-input-container>
+		<md-input-container class="md-block">
+			<div layout-sm>Select Date</div>
+			<input type="date" ng-model="event.date"> 
+		</md-input-container>
+		<div layout="row" layout-sm layout-align="center center"> 
 			<md-button class="md-button md-raised">
-				<i class="material-icons">add_a_photo</i>
-        		<label for="file-input"> Add Photo</label>  
-      		</md-button>
+        		<label for="file-input">Add Photo</label>  
+				<i class="material-icons">add_a_photo</i>			
+			</md-button>
       		<input id="file-input" type="file" style="display:none;">
 		</div>
-	<div layout layout-sm="column">
-	  <md-input-container flex>
-          <label>Event Category</label>
-          <md-select ng-model="category">
-            <md-option ng-repeat="category in categories" value="{{category}}">
-              {{category}}
-            </md-option>
-          </md-select>
-        </md-input-container>
-	</div>
-	<div layout layout-sm="column">
-		<md-datepicker ng-model="event.eventdate" md-placeholder="Enter date"></md-datepicker>
-    </div>
-	<div layout layout-sm="row">
-		<md-button class="md-button md-warn md-raised" ng-click="goToPage('/home')">
+		<md-input-container class="md-block">
+			<div layout="row" >
+				<div layout-padding="">
+					Select Hours for which you attended event: 
+				</div>
+				<div layout-padding="">
+			<!--	<input flex type="number" ng-model="event.hours" aria-label=""
+					min="1" max="8"	aria-controls="hour-slider">
+			-->
+				</div>
+			</div> 
+			<div layout-padding="">
+				<md-slider flex class="md-primary" md-discrete ng-model="event.hours" step="1" min="1" max="8" aria-label="hours" id="hour-slider"> </md-slider>
+			</div>
+		</md-input-container>
+		<div layout="row" layout-sm layout-align="center center"> 
+			<md-input-container class="md-block">
+				<md-button class="md-button md-warn md-raised" ng-click="goToPage('/home')">
 				BACK
-		</md-button>
-		<md-button class="md-button md-primary md-raised" ng-click="goToSelfieCheckinConfirmation(event.name)">
+				</md-button>
+			</md-input-container>
+			<md-input-container class="md-block">
+				<md-button class="md-button md-primary md-raised" ng-click="goToSelfieCheckinConfirmation(event.name)">
 				CHECK-IN
-		</md-button>
-	</div>
-	</div>
-</form>
+				</md-button>
+			</md-input-container>
+		</div>
+	</form>
+	</md-content>
 </div>
