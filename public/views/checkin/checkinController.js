@@ -8,6 +8,7 @@
 app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 	$scope.currentDate = new Date();
 	$scope.event = {
+		name : "",
 		hours: 2
 	};
 	$scope.foundNoUncheckedEvents = function(events) {
@@ -19,7 +20,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
 			}
 		}
 		return true;
-	}
+	};
     $scope.checkinAtevent = function() {
 		var search = $location.search();
         var parentIndex = search.parent;
@@ -71,7 +72,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: new Date ('2015/11/30'),
+        when: new Date ('2015/12/7'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -102,7 +103,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         		from: '3:30 PM',
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
-        		checkin: false,
+        		checkin: true,
         		number: '10',
                 address: 'Union Capital Boston, Boston',
                 points: '100',
@@ -143,7 +144,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         		from: '3:30 PM',
         		to: '10:34 PM',
         		description: 'The Adolescent and Young Adult Resource Center presents: Movie Mondays!',
-        		checkin: false,
+        		checkin: true,
         		number: '10',
                 address: 'Union Capital Boston, Boston',
                 points: '100',
@@ -160,7 +161,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         		from: '8:00 AM',
         		to: '10:34 PM',
         		description: 'Daily Schedule 9:00 to 10:30',
-        		checkin: false,
+        		checkin: true,
         		number: '46',
                 address: 'Union Capital Boston, Boston',
                 points: '100',
@@ -172,7 +173,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         		from: '3:00 PM',
         		to: '6:00 PM',
         		description: 'Save your seat! Don\'t wait to start the process of joining our Biotechnology program.',
-        		checkin: false,
+        		checkin: true,
         		number: '8',
                 address: 'Union Capital Boston, Boston',
                 points: '100',
@@ -194,7 +195,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: new Date('2016/1/3'),
+        when: new Date('2015/12/6'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
