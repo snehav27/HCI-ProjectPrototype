@@ -35,18 +35,30 @@
 						</div>
 						<div layout="row" layout-align="center center">
 							<md-list>
+							<md-item>
+							<md-card flex-sm="90" flex-gt-sm="90">
+							<md-card-content ng-show="(eventData | filter:search).length <= 0">
+								Search Results :
+								<div layout="column" layout-sm="column"
+									layout-align="space-around center" style="color:red;">
+									 Events not found matching your request! <br>
+									 Kindly try another search string!
+								</div>
+							</md-card-content>
+							</md-card>
+							</md-item>
 							<md-item ng-repeat="date in eventData | filter:search" ng-init="parentIndex = $index">
 								<md-card flex-sm="90" flex-gt-sm="90">
-									<md-card-content ng-show="::date.when.getTime() > DateToday.getTime()">
+									<md-card-content ng-show="::date.when.getTime() >= DateToday.getTime()">
 										<div layout="column" layout-sm="column"  layout-align="space-around center">
 										<div>
 											<p class="md-title">
 												{{ ::date.when | date:'EEEE , dd-MMMM-yyyy'  }}
 											</p>
 										</div>
-										<div ng-show="foundNoUncheckedEvents(date.events)"> 
-											No more events for today! :( <br>
-											Please check after some time! 
+										<div ng-show="foundNoUncheckedEvents(date.events)"
+										style="color:green;"> 
+											No more events left for this day to check-in!
 										</div>
 										<v-accordion class="vAccordion--default" style="width:280px">
 					                    	<v-pane ng-repeat="event in date.events" 
@@ -100,7 +112,7 @@
 					<div>
 					<md-input-container style="line-height:15px;width:250px;" flex>
 						<label>Search Events</label>
-						<input ng-model="search.events.name">
+						<input ng-model="searchquery.events.name">
 						</md-input-container>
 					</div>
 					<div>
@@ -109,42 +121,55 @@
 				</div>				
 				<div layout="row" layout-align="center center">
 					<md-list>
-						<md-item ng-repeat="date in eventData | filter:search" ng-init="parentIndex = $index">
+						<md-item>
 							<md-card flex-sm="90" flex-gt-sm="90">
-								<md-card-content ng-show="::date.when.getTime() < DateToday.getTime()">
+							<md-card-content ng-show="(eventData | filter:searchquery).length <= 0">
+								
+								Search Results :
+								<div layout="column" layout-sm="column"
+									layout-align="space-around center" style="color:red;">
+									 Events not found matching your request! <br>
+									 Kindly try another search string!
+								</div>
+							</md-card-content>
+							</md-card>
+						</md-item>
+						<md-item ng-repeat="pdate in eventData | filter:searchquery" ng-init="parentIndex = $index">
+							<md-card flex-sm="90" flex-gt-sm="90">
+								<md-card-content ng-show="::pdate.when.getTime() < DateToday.getTime()">
 									<div layout="column" layout-sm="column"  layout-align="space-around center">
 										<div>
 											<p class="md-title">
-												{{ ::date.when | date:'EEEE , dd-MMMM-yyyy'  }}
+												{{ ::pdate.when | date:'EEEE , dd-MMMM-yyyy'  }}
 											</p>
 										</div>
-										<div ng-show="foundNoUncheckedEvents(date.events)"> 
-											No more events for today! :( <br>
-											Please check after some time! 
+										<div ng-show="foundNoUncheckedEvents(pdate.events)"
+										style="color:green;" layout-align="space-around center"> 
+											No more events left for this day to check-in!
 										</div>
 										<v-accordion class="vAccordion--default" style="width:280px">
-					                    	<v-pane ng-repeat="event in date.events" 
-											ng-if="!event.checkin">
+					                    	<v-pane ng-repeat="pevent in pdate.events" 
+											ng-if="!pevent.checkin">
 					                    		<v-pane-header>
 								                	<p class="md-body-2"> 
-											    		{{ ::event.name }}
+											    		{{ ::pevent.name }}
 								                    </p>
 								                </v-pane-header>
 								                <v-pane-content>
 								                	<div layout="column" layout-align="space-between center">
 								                		<div layout="column" layout-align="space-between left">
 										                	<p class="md-caption">
-															    <b>Description :</b> {{ ::event.description }}
+															    <b>Description :</b> {{ ::pevent.description }}
 															</p>
 															<p class="md-caption">
-															    <b>From :</b> {{ ::event.from}}
+															    <b>From :</b> {{ ::pevent.from}}
 															</p>
 															<p class="md-caption">
-															    <b>To :</b> {{ ::event.to}}
+															    <b>To :</b> {{ ::pevent.to}}
 															</p>
 														</div>
 														<div layout="row">
-															<md-button class="md-raised md-primary" ng-if="!isAttending(event.checkin)" ng-click="goToEventCheckin($index, parentIndex)">
+															<md-button class="md-raised md-primary" ng-if="!isAttending(pevent.checkin)" ng-click="goToEventCheckin($index, parentIndex)">
 																<span class="md-caption">Check-In</span>
 															</md-button>
 														</div>
