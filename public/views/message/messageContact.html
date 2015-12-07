@@ -1,16 +1,18 @@
-﻿<div layout="column" layout-align="center center" ng-controller="messageCtrl" ng-init="getName()">
+﻿<div layout="column" layout-align="center center" ng-controller="messageCtrl" ng-init="getName()" class="inputdemoErrors">
 
     <h3 ng-model="contact"> {{contact.name}}</h3>
     <div></div>
-    <div layout="row" layout-sm="row" layout-align="center center">
-        <div>
-            <md-input-container style="line-height:75px;width:280px;"  flex>
-                <label>Start typing here ...</label>
-                <input ng-model="message">
-            </md-input-container>
+    <form name="messageForm">
+        <div layout="row" layout-sm="row" layout-align="center center">
+            <div>
+                <md-input-container  style="line-height:75px;width:280px;" flex>
+                    <label>Start typing here ...</label>
+                    <input required="" ng-model="message">
+                </md-input-container>
+            </div>
         </div>
-    </div>
-    <div layout="row" layout-align="center center">
-        <md-button class="md-raised md-warn" ng-click="goToPage('/message')">Cancel</md-button>
-        <md-button class="md-raised md-primary" ng-click="sendMessage()">Send</md-button>        
-    </div>
+        <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-warn" ng-click="goToPage('/message')">Cancel</md-button>
+            <md-button ng-disabled="messageForm.$invalid" class="md-raised md-primary" ng-click="sendMessage()">Send</md-button>
+        </div>
+    </form>

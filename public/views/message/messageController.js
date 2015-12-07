@@ -28,27 +28,27 @@ app.controller('messageCtrl', ['$scope', '$rootScope', '$location', '$mdToast', 
             who: 'Brian Holt',
             when: 'Sep 1 2015',
             status: 'Add Friend',
-            chat: 'Hi! This is ...'
+            chat:  'Hi! This is ...' 
         },
         {
 
             who: 'Robert',
             when: 'Jan 21 2013',
             status: 'Add Friend',
-            chat: 'Shall we meet at ...'
+            chat:  'Shall we meet at ...'
         },
         {
 
             who: 'Sandra Adams',
             when: 'Jan 21 2013',
             status: 'Add Friend',
-            chat: 'I am at the Empower ...'
+            chat:  'I am at the Empower ...' 
         },
         {
             who: 'Trevor Hansen',
             when: 'Aug 30 2014',
             status: 'Friends',
-            chat: 'We met at ...'
+            chat:  'We met at ...'
         }
     ];
 
@@ -89,17 +89,21 @@ app.controller('messageCtrl', ['$scope', '$rootScope', '$location', '$mdToast', 
         console.log(message);
 
     }
+    var chatList = [];
 
     $scope.addToChat = function(){
         $scope.sendClicked = 1;
-        var im = $scope.message;
+        chatList.push($scope.message);
+        for (var i = 0; i < chatList.length; i++) {
+            console.log(chatList[i]);
+        }
         $scope.message = '';
-        console.log(im);
-        $scope.typed = { message: im };
+        $scope.chatList = chatList;
            
     }
 
-    
+    var x = angular.element(document.querySelector(".dummy"));
+    console.log(x);
 
     
 
