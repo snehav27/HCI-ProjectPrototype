@@ -1,10 +1,15 @@
 
-  <div layout="column" layout-align="center center" ng-controller="carpoolCtrl">
+  <div layout="column" ng-controller="carpoolCtrl">
 
     <div layout="row" layout-align="center center">
        <h3  >Carpool</h3> 
        <i class="material-icons md-24" layout-margin>directions_car</i>
-    </div>	</br>
+    </div>  </br>
+    <div layout="row" layout-align="start center">      
+        <md-button class="md-button md-raised" ng-click="goToPage('/home')">
+            Back
+          </md-button>      
+    </div> 
     <div layout="column" class="relative" layout-fill role="main">
      <div layout="row" layout-align="center center">
      <md-button class="md-raised md-primary" style="width:300px;" ng-click="goToCreateCarpool()"> Create Carpool</md-button>

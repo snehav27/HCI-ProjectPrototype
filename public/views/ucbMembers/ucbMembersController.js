@@ -6,7 +6,7 @@
 */
 //app.controller('ucbMembersCtrl', function ($scope){
 
-app.controller('ucbMembersCtrl', ['$scope', function($scope){
+app.controller('ucbMembersCtrl', ['$scope','$location', function($scope,$location){  
   $scope.userData = [
       {
         who: 'Ali Conners',
@@ -69,4 +69,7 @@ app.controller('ucbMembersCtrl', ['$scope', function($scope){
       $scope.userData[index].status = 'Add Friend';
     }
 
+    $scope.goToPage = function(page) {
+        $location.url(page);
+    }    
 }]);

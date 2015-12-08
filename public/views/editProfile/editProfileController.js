@@ -6,7 +6,7 @@
 */
 app.controller('editProfileCtrl', function ($scope,$location) {
 	$scope.user = {
-	  email: 'janice.123@ucb.org',
+	  email: 'hilda.123@ucb.org',
 	  newPassword: '',
 	  confirmPassword: ''
 	}

@@ -1,9 +1,13 @@
 
-  <div layout="column" layout-align="center center" ng-controller="ucbMembersCtrl">
-
-    <div>
+  <div ng-controller="ucbMembersCtrl">
+    <div layout="column" layout-align="center center">
     	 <h3>UCB Members</h3>
-    </div>	
+    </div>
+    <div layout="row" layout-align="start center">      
+        <md-button class="md-button md-raised" ng-click="goToPage('/home')">
+            Back
+        </md-button>	
+    </div>    
     <div layout="column" class="relative" layout-fill role="main">
         <div layout="row" layout-sm="row"  layout-align="center center">
     <div>
