@@ -8,7 +8,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
 
 	$scope.eventData = [
       {
-        when: 'Sunday, November 29th 2015',
+        when: 'Sunday, December 8th 2015',
         events: [
         	{
         		name: '35th Anderson Tree Lighting',
@@ -25,7 +25,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Monday, November 30th 2015',
+        when: 'Monday, December 9th 2015',
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -66,7 +66,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Tuesday, December 1st 2015',
+        when: 'Tuesday, December 10th 2015',
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -107,7 +107,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Wednesday, December 2nd 2015',
+        when: 'Wednesday, December 11th 2015',
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -148,7 +148,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Thursday, December 3rd 2015',
+        when: 'Thursday, December 12th 2015',
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -189,7 +189,7 @@ app.controller('eventsCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: 'Friday, December 4th 2015',
+        when: 'Friday, December 13th 2015',
         events: [
         	{
         		name: 'Community Partners in Health Professions',

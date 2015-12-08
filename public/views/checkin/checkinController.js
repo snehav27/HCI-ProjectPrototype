@@ -55,7 +55,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
     }
 	$scope.eventData = [
       {
-        when: new Date('2015/12/8'),
+        when: new Date('2015/12/12'),
         events: [
         	{
         		name: '35th Anderson Tree Lighting',
@@ -72,7 +72,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: new Date ('2015/12/7'),
+        when: new Date ('2015/12/8'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',
@@ -236,7 +236,7 @@ app.controller('checkinCtrl', function ($scope, $rootScope, $location) {
         ]
       },
       {
-        when: new Date('2015/3/2015'),
+        when: new Date('2016/1/2'),
         events: [
         	{
         		name: 'Community Partners in Health Professions',

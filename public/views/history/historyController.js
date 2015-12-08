@@ -24,7 +24,7 @@ app.controller('historyCtrl', function ($scope, $rootScope, $location) {
         },
         {
           'name'      : 'Flu shot',
-          'date'       : '27-Aug-2016',
+          'date'       : '27-Aug-2015',
           'description'  : 'Flu shot for UCB members',
           'speaker'     : 'Shiney',
           'points'		 : '280',

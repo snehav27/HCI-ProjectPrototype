@@ -7,21 +7,21 @@
 app.controller('myPhotosCtrl', function ($scope, $rootScope, $location) {
 	$scope.myPhotoData = [{
           'name'      : 'Woment Empowerment 1',
-          'date'       : '3-Feb-2016',
+          'date'       : '3-Feb-2015',
           'description'  : 'Woment Empowerment for UCB members',
           'location'     : 'Boston, MA',
           'points'		 : '400'
         },
         {
           'name'      : 'Woment Empowerment 2',
-          'date'       : '28-Sep-2016',
+          'date'       : '28-Sep-2015',
           'description'  : 'Voting information for UCB members',
           'location'     : 'Boston, MA',
           'points'		 : '150'
         },
         {
           'name'      : 'Woment Empowerment 3',
-          'date'       : '3-Dec-2016',
+          'date'       : '3-Dec-2015',
           'description'  : 'Flu shot for UCB members',
           'location'     : 'Boston, MA',
           'points'		 : '280'
