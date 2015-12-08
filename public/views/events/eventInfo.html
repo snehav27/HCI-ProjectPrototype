@@ -11,26 +11,26 @@
                     <md-card flex-sm="90" flex-gt-sm="90">
                         <md-card-content>
                             <div layout="column" layout-align="space-between left">
-                                <p class="md-caption">
-                                    <b>Description :</b> {{eventInfo.description}}
+                                <p class="md-body-1">
+                                    <b>Description :</b> {{::eventInfo.description}}
                                 </p>
-                                <p class="md-caption" layout="row" layout-align="space-between center">
-                                    <span class="md-caption"><b>Speaker :</b> {{eventInfo.speaker}}</span>
-                                    <a href="eventInfo.website"><i class="material-icons">link</i></a>
+                                <p class="md-body-1" layout="row" layout-align="space-between center">
+                                    <span class="md-body-1"><b>Speaker :</b> {{::eventInfo.speaker}}</span>
+                                    <a href="::eventInfo.website"><i class="material-icons">link</i></a>
                                 </p>
-                                <p class="md-caption">
-                                    <b>Date :</b> {{date}}
+                                <p class="md-body-1">
+                                    <b>Date :</b> {{::date}}
                                 </p>
-                                <p class="md-caption">
+                                <p class="md-body-1">
                                     <b>Timings :</b> {{eventInfo.from}} to {{eventInfo.to}}
                                 </p>
-                                <p class="md-caption">
+                                <p class="md-body-1">
                                     <b>Address :</b> {{eventInfo.address}}
                                 </p>
-                                <p class="md-caption">
+                                <p class="md-body-1">
                                     <b>Points :</b> {{eventInfo.points}}
                                 </p>
-                                <p class="md-caption">
+                                <p class="md-body-1">
                                     <b>Attendees :</b> {{eventInfo.number}}
                                 </p>
                             </div>

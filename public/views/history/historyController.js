@@ -7,7 +7,7 @@
 app.controller('historyCtrl', function ($scope, $rootScope, $location) {
 
 	$scope.pastEvents = [{
-          'name'      : 'Woment Empowerment',
+          'name'      : 'Women Empowerment',
           'date'       : '3-Feb-2015',
           'description'  : 'Woment Empowerment for UCB members',
           'speaker'     : 'Natalia',
